@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class Genre implements Serializable {
 
     @JsonProperty("id")
-    private long id;
+    private int id;
     @JsonProperty("name")
     private String name;
 

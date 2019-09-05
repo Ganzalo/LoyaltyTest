@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ConnectionHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/CounterAverageVote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/ConnectionHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ConnectionHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +34,7 @@
   <component name="ProjectId" id="1QJtzeuvukB0ONZzazmpyCiT1H8" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BestService/eventprocessor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EventProcessor/eventprocessor" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RunDashboard">
