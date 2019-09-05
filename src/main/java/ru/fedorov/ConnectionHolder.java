@@ -3,6 +3,8 @@ package ru.fedorov;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import ru.fedorov.model.AverageVote;
+import ru.fedorov.model.AverageVotes;
 import ru.fedorov.model.Genre;
 import ru.fedorov.model.Genres;
 
@@ -32,20 +34,8 @@ public class ConnectionHolder {
         return new ArrayList<>(genres.getGenres());
     }
 
-    public List<Genre> getAverageVoteByPage() throws IOException {
-        String link = REQUEST_AVERAGE_VOTE + "1";
-        URL urlGenre = new URL(link);
-
-        HttpURLConnection connection = (HttpURLConnection) urlGenre.openConnection();
-        connection.setRequestMethod("GET");
-
-        ObjectMapper mapper = new ObjectMapper();
-        Genres genres = mapper.readValue(urlGenre, new TypeReference<Genres>() {});
-
-        return new ArrayList<>(genres.getGenres());
-    }
-
-    private int getMaxPage() throws IOException {
+    public int getMaxPage() throws IOException {
+        int pages = 0;
         String link = REQUEST_AVERAGE_VOTE + "1";
         URL urlMaxPage = new URL(link);
 
@@ -56,10 +46,22 @@ public class ConnectionHolder {
         ObjectNode node = mapper.readValue(urlMaxPage, ObjectNode.class);
 
         if (node.has("total_pages")) {
-            System.out.println("total_pages: " + node.get("total_pages"));
+            pages = node.get("total_pages").asInt();
         }
 
-
-        return 0;
+        return pages;
     }
+
+    public List<AverageVote> getAverageVoteByPage(int pageNum) throws IOException {
+        URL urlAverageVotes = new URL(REQUEST_AVERAGE_VOTE + pageNum);
+
+        HttpURLConnection connection = (HttpURLConnection) urlAverageVotes.openConnection();
+        connection.setRequestMethod("GET");
+
+        ObjectMapper mapper = new ObjectMapper();
+        AverageVotes page = mapper.readValue(urlAverageVotes, new TypeReference<AverageVotes>() {});
+
+        return new ArrayList<>(page.getAverageVotes());
+    }
+
 }

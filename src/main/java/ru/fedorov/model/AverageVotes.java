@@ -8,8 +8,9 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class Genres implements Serializable {
 
-    private List<Genre> genres;
+public class AverageVotes implements Serializable {
+
+    private List<AverageVote> averageVotes;
 
 }
