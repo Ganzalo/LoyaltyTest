@@ -1,8 +1,10 @@
 package ru.fedorov;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import ru.fedorov.model.AverageVote;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CounterAverageVote {
 
@@ -56,7 +58,8 @@ public class CounterAverageVote {
     private void calculationAverageVote() {
         while(currPage < maxPage) {
             try {
-                System.out.println(connectionHolder.getAverageVoteByPage(currPage));
+
+                System.out.println(getAverageVote(connectionHolder.getAverageVoteByPage(currPage)));
             } catch (IOException e) {
                 System.out.println("Ошибка получения данных за страницу!");
                 e.printStackTrace();
@@ -64,5 +67,22 @@ public class CounterAverageVote {
             break;
             //currPage++;
         }
+    }
+
+    private float getAverageVote(List<AverageVote> averageVotes) {
+        float sum = 0.0f;
+        int count = 0;
+        for(AverageVote averageVote : averageVotes) {
+            for (int genreIds : averageVote.getGenreIds()) {
+                if (genreIds == this.genreId) {
+                    sum += averageVote.getVoteAverage();
+                    count++;
+                    break;
+                }
+            }
+        }
+        if(count == 0)
+            return 0;
+        return sum / count;
     }
 }

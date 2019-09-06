@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import ru.fedorov.model.AverageVote;
-import ru.fedorov.model.AverageVotes;
+import ru.fedorov.model.Page;
 import ru.fedorov.model.Genre;
 import ru.fedorov.model.Genres;
 
@@ -59,9 +59,9 @@ public class ConnectionHolder {
         connection.setRequestMethod("GET");
 
         ObjectMapper mapper = new ObjectMapper();
-        AverageVotes page = mapper.readValue(urlAverageVotes, new TypeReference<AverageVotes>() {});
+        Page page = mapper.readValue(urlAverageVotes, new TypeReference<Page>() {});
 
-        return new ArrayList<>(page.getAverageVotes());
+        return new ArrayList<>(page.getResults());
     }
 
 }

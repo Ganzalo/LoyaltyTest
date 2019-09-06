@@ -16,8 +16,8 @@ import java.io.Serializable;
 public class AverageVote implements Serializable {
 
     @JsonProperty("vote_average")
-    float vote_average;
+    private float voteAverage;
     @JsonProperty("genre_ids")
-    int[] genre_ids;
+    private int[] genreIds;
 
 }
