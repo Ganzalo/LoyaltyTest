@@ -12,6 +12,7 @@ public class CounterAverageVote {
     int genreId;
     int maxPage;
     int currPage = 1;
+    float avergeVote = 0;
 
 
     public CounterAverageVote(int genreId) {
@@ -57,13 +58,18 @@ public class CounterAverageVote {
 
     private void calculationAverageVote() {
         while(currPage < maxPage) {
-            try {
+                int count = 0;
+                float averageVoteTemp = 0;
+                while ((currPage % 10) == 0 && currPage < maxPage) {
+                    try {
+                        averageVoteTemp += getAverageVote(connectionHolder.getAverageVoteByPage(currPage));
+                    } catch (IOException e) {
+                        System.out.println("Ошибка получения данных за страницу!");
+                        e.printStackTrace();
+                    }
+                    count++;
+                }
 
-                System.out.println(getAverageVote(connectionHolder.getAverageVoteByPage(currPage)));
-            } catch (IOException e) {
-                System.out.println("Ошибка получения данных за страницу!");
-                e.printStackTrace();
-            }
             break;
             //currPage++;
         }
