@@ -15,7 +15,7 @@ public class ClientController {
     private Scanner scanner;
     private Map<Integer, String> genres = null;
 
-    private CounterAverageVote counterAverageVote;
+    private AverageVoteCalculator counterAverageVote;
 
     ClientController() { }
 
@@ -61,7 +61,7 @@ public class ClientController {
     }
 
     private void countingAverageVoteHolder(int id) {
-        counterAverageVote = new CounterAverageVote(id);
+        counterAverageVote = new AverageVoteCalculator(id);
         counterAverageVote.getAverageVote();
 
         System.out.println("Для остановки подсчета напишите " + STOP);
