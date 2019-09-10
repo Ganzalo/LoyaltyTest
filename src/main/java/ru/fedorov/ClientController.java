@@ -64,10 +64,6 @@ public class ClientController {
         counterAverageVote = new AverageVoteCalculator(id);
         counterAverageVote.getAverageVote();
 
-        System.out.println("Для остановки подсчета напишите " + STOP);
-        while (true) {
-            if(scanner.nextLine().equals(STOP)) break;
-        }
         System.out.println("конец");
     }
 

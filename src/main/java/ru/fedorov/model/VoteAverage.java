@@ -13,11 +13,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class AverageVote implements Serializable {
+public class VoteAverage implements Serializable {
 
-    @JsonProperty("vote_average")
-    private float voteAverage;
     @JsonProperty("genre_ids")
     private int[] genreIds;
+    @JsonProperty("vote_count")
+    private float voteCount;
+    @JsonProperty("vote_average")
+    private float voteAverage;
+
 
 }

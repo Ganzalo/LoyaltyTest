@@ -3,7 +3,7 @@ package ru.fedorov;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ru.fedorov.model.AverageVote;
+import ru.fedorov.model.VoteAverage;
 import ru.fedorov.model.Page;
 import ru.fedorov.model.Genre;
 import ru.fedorov.model.Genres;
@@ -63,11 +63,45 @@ public class ConnectionHolder {
         return new ArrayList<>(genres.getGenres());
     }
 
-    public List<AverageVote> getAverageVoteByPage(int currPage) {
-        if(!hasNext()) {
-            throw new IndexOutOfBoundsException("Превышен лимит страниц");
+    /**
+     * Получает лист объектов AverageVote с каждой страницы начиная с currPage вплоть пока
+     * не будет выполнено #getAverageVoteByPage() pageCount раз. Если pageCount + currPage
+     * первышает maxPage то будет взято AverageVote с максимального кол-во страниц.
+     *
+     * @param pageCount кол-во страниц с которых будет взять объекты AverageVote. Если
+     *                  pageCount = 0  то запрос будет сделанн для всех страниц. Если
+     *                  pageCount < 0 то Collections.emptyList()
+     * @return List<AverageVote> если еще есть страницы, иначе Collections.emptyList()
+     * @see #getAverageVoteByPage()
+     */
+
+    public List<VoteAverage> getAverageVoteNextPages(int pageCount) {
+        if (!hasNext() || pageCount < 0) {
+            return Collections.emptyList();
         }
 
+        if (pageCount == 0)
+            pageCount = maxPage;
+
+        int endPage = this.currPage + pageCount;
+
+        if (endPage > this.maxPage)
+            endPage = this.maxPage;
+
+        List<VoteAverage> pages = new ArrayList<>();
+        while (this.currPage < endPage) {
+            pages.addAll(getAverageVoteByPage());
+            this.currPage++;
+        }
+
+        return new ArrayList<>(pages);
+    }
+
+    public boolean hasNext() {
+        return this.maxPage > (this.currPage) ;
+    }
+
+    private List<VoteAverage> getAverageVoteByPage() {
         Page page = null;
         try {
             URL urlAverageVotes = new URL(REQUEST_AVERAGE_VOTE + this.currPage);
@@ -82,33 +116,11 @@ public class ConnectionHolder {
             e.printStackTrace();
         }
 
-        if(page == null)
-            return Collections.emptyList();
+        if (page == null) {
+            System.out.println("Пропуск страницы" + currPage);
+            return new ArrayList<>();
+        }
+
         return new ArrayList<>(page.getResults());
     }
-
-    public List<AverageVote> getAverageVoteNextPage(int pageCount) throws IOException {
-        if(!hasNext(pageCount)) {
-            throw new IndexOutOfBoundsException("Превышен лимит страниц");
-        }
-
-        List<AverageVote> pages = new ArrayList<>();
-        int endPage = currPage + pageCount;
-
-        while (currPage < endPage) {
-            pages.addAll(getAverageVoteByPage(currPage));
-            currPage++;
-        }
-
-        return new ArrayList<>(pages);
-    }
-
-    public boolean hasNext() {
-        return this.maxPage > (this.currPage + 1) ;
-    }
-
-    public boolean hasNext(int countPage) {
-        return this.maxPage > (this.currPage + countPage) ;
-    }
-
 }

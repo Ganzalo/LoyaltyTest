@@ -13,7 +13,6 @@ import java.util.List;
 
 public class Page implements Serializable {
 
-    private int page;
-    private List<AverageVote> results;
+    private List<VoteAverage> results;
 
 }
