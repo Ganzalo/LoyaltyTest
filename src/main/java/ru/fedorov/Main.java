@@ -1,12 +1,11 @@
 package ru.fedorov;
 
+import ru.fedorov.workers.ClientController;
+
 public class Main {
 
-
-    private static ClientController clientController;
-
     public static void main(String[] args)  {
-        clientController = new ClientController();
+        ClientController clientController = new ClientController();
         clientController.start();
     }
 }
