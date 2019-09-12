@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/GenresHolderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/GenresHolderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GenresHandlerTests">
+  <component name="RunManager" selected="JUnit.All Tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.fedorov.Main" />
       <module name="LoyaltyTest" />
@@ -60,6 +61,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All Tests" type="JUnit" factoryName="JUnit">
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,8 +93,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PagesHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoyaltyTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.fedorov.connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.fedorov.connection" />
+      <option name="MAIN_CLASS_NAME" value="ru.fedorov.connection.PagesHandlerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All Tests" />
+      <item itemvalue="JUnit.GenresHandlerTests" />
+      <item itemvalue="JUnit.PagesHandlerTests" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PagesHandlerTests" />
         <item itemvalue="JUnit.GenresHandlerTests" />
         <item itemvalue="Application.Main" />
       </list>
