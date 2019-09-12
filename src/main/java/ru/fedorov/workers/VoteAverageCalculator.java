@@ -30,9 +30,9 @@ public class VoteAverageCalculator {
             System.out.println("Получение данных! Обработано страниц " + pagesHolder.getCurrentPage() +
                     " из " + pagesHolder.getMaxPage());
         }
-        System.out.println("Подсчет средний оценки... ");
+        System.out.println("Подсчет средней оценки... ");
         float voteAverage = formatFloat(calculationVoteAverage(voteAverages));
-        System.out.println("Обработка завершена! Значение средний оценки за жанр " + GENRES.get(genreId) +
+        System.out.println("Обработка завершена! Значение средней оценки за жанр " + GENRES.get(genreId) +
                 " = " + voteAverage);
         return voteAverage;
     }
