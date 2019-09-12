@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/Consts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/GenresHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/PagesHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/GenresHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/VoteAverageCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/GenresHolderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/AverageVoteCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/ConnectionHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +33,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EventProcessor/eventprocessor" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.fedorov.connection" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -52,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.GenresHandlerTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.fedorov.Main" />
       <module name="LoyaltyTest" />
@@ -66,8 +64,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GenresHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoyaltyTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.fedorov.connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.fedorov.connection" />
+      <option name="MAIN_CLASS_NAME" value="ru.fedorov.connection.GenresHandlerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GenresHandlerTests" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
