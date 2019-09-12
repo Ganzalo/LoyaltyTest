@@ -8,7 +8,7 @@ import static ru.fedorov.workers.GenresHolder.GENRES;
 public class ClientController {
 
     public void start() {
-        System.out.println("Привет! Это программа для получение средний оценки за жанр!");
+        System.out.println("Привет! Это программа для получения средней оценки за жанр!");
         System.out.println("Выберите id жанра:");
 
         if (GENRES.size() != 0) {
