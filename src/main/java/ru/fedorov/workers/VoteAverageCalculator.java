@@ -22,6 +22,9 @@ public class VoteAverageCalculator {
     }
 
     public float voteAverage() {
+        if(GENRES.get(genreId) == null)
+            return 0;
+
         PagesHandler pagesHolder = new PagesHandler();
         List<VoteAverage> voteAverages = new ArrayList<>();
 

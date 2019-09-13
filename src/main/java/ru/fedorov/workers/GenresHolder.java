@@ -11,9 +11,7 @@ public class GenresHolder {
     public static final Map<Integer, String> GENRES = genres();
 
     public static Map<Integer, String> genres() {
-        GenresHandler genreHolder = new GenresHandler();
-
-        return genreHolder.getGenres().stream()
+        return new GenresHandler().getGenres().stream()
                 .collect(Collectors.toMap(Genre::getId, Genre::getName));
     }
 

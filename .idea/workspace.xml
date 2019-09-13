@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/GenresHolderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/GenresHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/GenresHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/VoteAverageCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/VoteAverageCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +21,9 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="LoyaltyTest" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,6 +39,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EventProcessor/eventprocessor" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
@@ -51,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.fedorov.Main" />
       <module name="LoyaltyTest" />
@@ -108,17 +118,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VoteAverageCalculatorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoyaltyTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.fedorov.workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.fedorov.workers" />
+      <option name="MAIN_CLASS_NAME" value="ru.fedorov.workers.VoteAverageCalculatorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.All Tests" />
       <item itemvalue="JUnit.GenresHandlerTests" />
       <item itemvalue="JUnit.PagesHandlerTests" />
+      <item itemvalue="JUnit.VoteAverageCalculatorTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.VoteAverageCalculatorTests" />
         <item itemvalue="JUnit.PagesHandlerTests" />
         <item itemvalue="JUnit.GenresHandlerTests" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +172,16 @@
             </State>
           </value>
         </entry>
+      </map>
+    </option>
+  </component>
+  <component name="regexState">
+    <option name="map">
+      <map>
+        <entry key="flags" value="0" />
+        <entry key="mode" value="0" />
+        <entry key="regex" value="(19||20)\d\d([- /.])(0[1-9]||1[012])\2(0[1-9]||[12][0-9]||3[01])" />
+        <entry key="text" value="1900-01-01 2007/08/13 1900.01.01 1900 01 01 1900-01.01 1900 13 01 1900 02 31" />
       </map>
     </option>
   </component>

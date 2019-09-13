@@ -1,0 +1,13 @@
+ru\fedorov\Main.class
+ru\fedorov\connection\GenresHandler$1.class
+ru\fedorov\connection\PagesHandler$1.class
+ru\fedorov\model\Genres.class
+ru\fedorov\workers\GenresHolder.class
+ru\fedorov\model\VoteAverage.class
+ru\fedorov\connection\GenresHandler.class
+ru\fedorov\connection\Consts.class
+ru\fedorov\workers\ClientController.class
+ru\fedorov\connection\PagesHandler.class
+ru\fedorov\model\Genre.class
+ru\fedorov\workers\VoteAverageCalculator.class
+ru\fedorov\model\Page.class
