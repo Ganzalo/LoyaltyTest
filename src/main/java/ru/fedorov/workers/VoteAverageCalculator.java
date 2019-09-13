@@ -31,13 +31,13 @@ public class VoteAverageCalculator {
                     " из " + pagesHolder.getMaxPage());
         }
         System.out.println("Подсчет средней оценки... ");
-        float voteAverage = formatFloat(calculationVoteAverage(voteAverages));
+        float voteAverage = formatFloat(calculateVoteAverage(voteAverages));
         System.out.println("Обработка завершена! Значение средней оценки за жанр " + GENRES.get(genreId) +
                 " = " + voteAverage);
         return voteAverage;
     }
 
-    private float calculationVoteAverage(List<VoteAverage> voteAverages) {
+    private float calculateVoteAverage(List<VoteAverage> voteAverages) {
         float sum = 0;
         int count = 0;
         for(VoteAverage voteAverage : voteAverages) {
