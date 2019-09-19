@@ -23,7 +23,7 @@ public class ClientController {
 
     private void getClientResponse() {
         Scanner scanner = new Scanner(System.in);
-        int id;
+        int id = -1;
         while (true) {
             try {
                 id = scanner.nextInt();
@@ -37,6 +37,10 @@ public class ClientController {
                 scanner.nextLine();
             }
         }
+        clientHandler(id);
+    }
+
+    private void clientHandler(int id) {
         VoteAverageCalculator counterAverageVote = new VoteAverageCalculator(id);
         System.out.println(counterAverageVote.voteAverage());
         System.out.println("Конец");
