@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 public class VoteAverageCalculatorTests {
 
-    private VoteAverageCalculator voteAverageCalculator;
+    private AverageVoteCalculator voteAverageCalculator;
 
     @DisplayName("voteAverage Test")
     @Test
     void voteAverageTest() {
-        voteAverageCalculator = new VoteAverageCalculator(-1);
+        voteAverageCalculator = new AverageVoteCalculator(-1);
         Assertions.assertEquals(0, (int) voteAverageCalculator.voteAverage());
     }
 }

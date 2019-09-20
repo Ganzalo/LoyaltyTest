@@ -7,6 +7,11 @@ import static ru.fedorov.workers.GenresHolder.GENRES;
 
 public class ClientController {
 
+    private Scanner scanner;
+
+    private static final String STOP_WORDS = "stop";
+    private static final String PROGRESS_WORDS = "progress";
+
     public void start() {
         System.out.println("Привет! Это программа для получения средней оценки за жанр!");
         System.out.println("Выберите id жанра:");
@@ -22,12 +27,12 @@ public class ClientController {
     }
 
     private void getClientResponse() {
-        Scanner scanner = new Scanner(System.in);
-        int id = -1;
+        scanner = new Scanner(System.in);
+        int id;
         while (true) {
             try {
                 id = scanner.nextInt();
-                if(checkId(id)) {
+                if (checkId(id)) {
                     break;
                 } else {
                     throw new IllegalArgumentException();
@@ -41,8 +46,24 @@ public class ClientController {
     }
 
     private void clientHandler(int id) {
-        VoteAverageCalculator counterAverageVote = new VoteAverageCalculator(id);
-        System.out.println(counterAverageVote.voteAverage());
+        CalculatorThread calculatorThread = new CalculatorThread(new AverageVoteCalculator(id));
+        calculatorThread.start();
+        System.out.println("Напишите " + STOP_WORDS + ", чтобы завершить!");
+        System.out.println("Напишите " + PROGRESS_WORDS + ", чтобы получить  завершить!");
+        String clientRequest;
+        while (!calculatorThread.isInterrupted() ) {
+            clientRequest = scanner.nextLine();
+
+            if (clientRequest.equalsIgnoreCase(PROGRESS_WORDS)) {
+                System.out.println("Обработано данных " + calculatorThread.getCurrResult() + "%");
+            }
+
+            if (clientRequest.equalsIgnoreCase(STOP_WORDS)) {
+                calculatorThread.interrupt();
+                break;
+            }
+        }
+
         System.out.println("Конец");
     }
 

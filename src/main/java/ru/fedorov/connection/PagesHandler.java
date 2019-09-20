@@ -3,7 +3,7 @@ package ru.fedorov.connection;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ru.fedorov.model.VoteAverage;
+import ru.fedorov.model.AverageVote;
 import ru.fedorov.model.Page;
 
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class PagesHandler {
      * @see #getAverageVoteByPage()
      */
 
-    public List<VoteAverage> getAverageVoteNextPages(int pageStep) {
+    public List<AverageVote> getAverageVotesNextPages(int pageStep) {
         if (!hasNext() || pageStep < 0) {
             return Collections.emptyList();
         }
@@ -75,7 +75,7 @@ public class PagesHandler {
         if (endPage > this.maxPage)
             endPage = this.maxPage;
 
-        List<VoteAverage> pages = new ArrayList<>();
+        List<AverageVote> pages = new ArrayList<>();
         while (this.currentPage < endPage) {
             pages.addAll(getAverageVoteByPage());
             this.currentPage++;
@@ -87,7 +87,7 @@ public class PagesHandler {
         return this.maxPage > this.currentPage;
     }
 
-    private List<VoteAverage> getAverageVoteByPage() {
+    private List<AverageVote> getAverageVoteByPage() {
         Page page = null;
         ObjectMapper mapper = new ObjectMapper();
 

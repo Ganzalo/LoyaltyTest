@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.fedorov.model.VoteAverage;
+import ru.fedorov.model.AverageVote;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class PagesHandlerTests {
     @DisplayName("Return not null")
     @Test
     void getAverageVoteNextPagesNotNull() {
-        Assertions.assertNotNull(pagesHandler.getAverageVoteNextPages(1));
+        Assertions.assertNotNull(pagesHandler.getAverageVotesNextPages(1));
     }
 
     @DisplayName("Changes field")
@@ -28,7 +28,7 @@ public class PagesHandlerTests {
     void getAverageVoteNextPagesChangesField() {
         if (pagesHandler.getMaxPage() > 1) {
             Assertions.assertEquals(1, pagesHandler.getCurrentPage());
-            pagesHandler.getAverageVoteNextPages(1);
+            pagesHandler.getAverageVotesNextPages(1);
             Assertions.assertEquals( 2, pagesHandler.getCurrentPage());
         }
     }
@@ -40,19 +40,19 @@ public class PagesHandlerTests {
             Assertions.assertTrue(pagesHandler.hasNext());
             Assertions.assertEquals(1, pagesHandler.getCurrentPage());
 
-            pagesHandler.getAverageVoteNextPages(-1);
+            pagesHandler.getAverageVotesNextPages(-1);
 
             Assertions.assertEquals(1, pagesHandler.getCurrentPage());
 
-            pagesHandler.getAverageVoteNextPages(1);
+            pagesHandler.getAverageVotesNextPages(1);
 
             Assertions.assertEquals(2, pagesHandler.getCurrentPage());
 
-            List<VoteAverage> averageVotes = pagesHandler.getAverageVoteNextPages(0);
+            List<AverageVote> averageVotes = pagesHandler.getAverageVotesNextPages(0);
 
             Assertions.assertEquals(pagesHandler.getMaxPage(),  pagesHandler.getCurrentPage());
             Assertions.assertFalse(pagesHandler.hasNext());
-            Assertions.assertEquals(0, pagesHandler.getAverageVoteNextPages(1).size());
+            Assertions.assertEquals(0, pagesHandler.getAverageVotesNextPages(1).size());
         }
     }
 }
