@@ -15,6 +15,7 @@ public class CalculatorThread extends Thread {
 
     @Override
     public void interrupt() {
+        voteAverageCalculator.setStopCalculate(true);
         super.interrupt();
     }
 

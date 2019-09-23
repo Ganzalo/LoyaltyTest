@@ -17,7 +17,13 @@ public class AverageVoteCalculator {
     private PagesHandler pagesHandler;
     private float currProgress;
 
+    private boolean stopCalculate = false;
+
     private int genreId;
+
+    public void setStopCalculate(boolean stop) {
+        this.stopCalculate = stop;
+    }
 
     public float getCurrProgress() {
         return currProgress;
@@ -34,10 +40,9 @@ public class AverageVoteCalculator {
         pagesHandler = new PagesHandler();
         List<AverageVote> averageVoteByFilms = new ArrayList<>();
 
-        while (pagesHandler.hasNext()) {
+        while (pagesHandler.hasNext() && !stopCalculate) {
             averageVoteByFilms.addAll(pagesHandler.getAverageVotesNextPages(PAGE_STEP));
             setPercentageProcessData();
-            //System.out.println("Получение данных! Обработано данных " +  + "%");
         }
 
         System.out.println("Подсчет средней оценки... ");

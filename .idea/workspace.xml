@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/PagesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/PagesHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/VoteAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/VoteAverageCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
