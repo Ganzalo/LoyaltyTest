@@ -8,9 +8,16 @@ public class CalculatorThread extends Thread {
         this.voteAverageCalculator = voteAverageCalculator;
     }
 
+    public boolean isStopCalculate() {
+        return voteAverageCalculator.isStopCalculate();
+    }
 
-    public float getCurrResult() {
+    public float getCurrProgress() {
         return voteAverageCalculator.getCurrProgress();
+    }
+
+    public float getResult() {
+        return voteAverageCalculator.getAverageVote();
     }
 
     @Override
@@ -21,6 +28,7 @@ public class CalculatorThread extends Thread {
 
     @Override
     public void run() {
-        voteAverageCalculator.voteAverage();
+        voteAverageCalculator.startCalculate();
     }
+
 }

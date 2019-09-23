@@ -16,10 +16,18 @@ public class AverageVoteCalculator {
     private final static int PAGE_STEP = 30;
     private PagesHandler pagesHandler;
     private float currProgress;
-
+    private float averageVoteResult;
     private boolean stopCalculate = false;
 
     private int genreId;
+
+    public AverageVoteCalculator(int genreId) {
+        this.genreId = genreId;
+    }
+
+    public boolean isStopCalculate() {
+        return stopCalculate;
+    }
 
     public void setStopCalculate(boolean stop) {
         this.stopCalculate = stop;
@@ -29,13 +37,16 @@ public class AverageVoteCalculator {
         return currProgress;
     }
 
-    public AverageVoteCalculator(int genreId) {
-        this.genreId = genreId;
+    public float getAverageVote() {
+        return averageVoteResult;
     }
 
-    public float voteAverage() {
-        if(GENRES.get(genreId) == null)
-            return 0;
+    public void startCalculate() {
+        if(GENRES.get(genreId) == null) {
+            stopCalculate = true;
+            averageVoteResult = 0.0f;
+            return;
+        }
 
         pagesHandler = new PagesHandler();
         List<AverageVote> averageVoteByFilms = new ArrayList<>();
@@ -45,12 +56,8 @@ public class AverageVoteCalculator {
             setPercentageProcessData();
         }
 
-        System.out.println("Подсчет средней оценки... ");
-        float averageVote = formatFloat(calculateAverageVoteByGenre(averageVoteByFilms));
-        System.out.println("Обработка завершена! Значение средней оценки за жанр " + GENRES.get(genreId) +
-                " = " + averageVote);
-
-        return averageVote;
+        averageVoteResult = formatFloat(calculateAverageVoteByGenre(averageVoteByFilms));
+        stopCalculate = true;
     }
 
     private float calculateAverageVoteByGenre(List<AverageVote> averageVotesByFilms) {
@@ -66,10 +73,8 @@ public class AverageVoteCalculator {
             }
         }
 
-        System.out.println(sum + "  " + count);
         if(count == 0)
             return 0;
-
         return sum / count;
     }
 

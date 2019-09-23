@@ -1,5 +1,6 @@
 package ru.fedorov.workers;
 
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -37,7 +38,7 @@ public class ClientController {
                 } else {
                     throw new IllegalArgumentException();
                 }
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException | InputMismatchException e) {
                 System.out.println("Id не существует.");
                 scanner.nextLine();
             }
@@ -48,22 +49,32 @@ public class ClientController {
     private void clientHandler(int id) {
         CalculatorThread calculatorThread = new CalculatorThread(new AverageVoteCalculator(id));
         calculatorThread.start();
-        System.out.println("Напишите " + STOP_WORDS + ", чтобы завершить!");
-        System.out.println("Напишите " + PROGRESS_WORDS + ", чтобы получить  завершить!");
+        System.out.println("Напишите " + STOP_WORDS + " - чтобы завершить обработку данных и получить результат или");
+        System.out.println("напишите " + PROGRESS_WORDS + " - чтобы получить текущий прогресс обработанных данных!");
+
         String clientRequest;
-        while (!calculatorThread.isInterrupted() ) {
+        while (!calculatorThread.isInterrupted() && !calculatorThread.isStopCalculate()) {
             clientRequest = scanner.nextLine();
 
             if (clientRequest.equalsIgnoreCase(PROGRESS_WORDS)) {
-                System.out.println("Обработано данных " + calculatorThread.getCurrResult() + "%");
+                System.out.println("Обработано данных " + calculatorThread.getCurrProgress() + "%");
             }
 
             if (clientRequest.equalsIgnoreCase(STOP_WORDS)) {
                 calculatorThread.interrupt();
-                break;
             }
         }
 
+        try {
+            calculatorThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Обработано данных " + calculatorThread.getCurrProgress() + "%");
+
+        System.out.println("Обработка завершена! Значение средней оценки за жанр " + GENRES.get(id) +
+                " = " + calculatorThread.getResult());
         System.out.println("Конец");
     }
 
