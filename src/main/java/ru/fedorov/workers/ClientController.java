@@ -64,6 +64,7 @@ public class ClientController {
                 calculatorThread.interrupt();
             }
         }
+        scanner.close();
 
         try {
             calculatorThread.join();

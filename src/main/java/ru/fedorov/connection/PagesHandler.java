@@ -16,7 +16,7 @@ import static ru.fedorov.connection.Consts.REQUEST_AVERAGE_VOTE;
 
 public class PagesHandler {
 
-    private int currentPage = 1900;
+    private int currentPage = 1;
     private final int maxPage = maxPage();
 
     public int getCurrentPage() {
