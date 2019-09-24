@@ -42,7 +42,7 @@ public class AverageVoteCalculator {
     }
 
     public void startCalculate() {
-        if(GENRES.get(genreId) == null) {
+        if (GENRES.get(genreId) == null) {
             stopCalculate = true;
             averageVoteResult = 0.0f;
             return;

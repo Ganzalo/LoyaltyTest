@@ -33,14 +33,25 @@ public class CalculatorThread extends Thread {
     public void run() {
         voteAverageCalculator.startCalculate();
 
-        Robot robot = null;
-        try {
-            robot = new Robot();
-        } catch (AWTException e) {
-            e.printStackTrace();
+        while (interrupted()) {
+            try {
+                sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        if(!interrupted()) {
+
+            Robot robot = null;
+            try {
+                robot = new Robot();
+            } catch (AWTException e) {
+
+            }
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        }
     }
 
 }
