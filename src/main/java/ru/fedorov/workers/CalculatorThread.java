@@ -41,17 +41,14 @@ public class CalculatorThread extends Thread {
             }
         }
 
-        if(!interrupted()) {
-
-            Robot robot = null;
-            try {
-                robot = new Robot();
-            } catch (AWTException e) {
-
-            }
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            //maybe add smth
         }
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
 }
