@@ -2,10 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Console.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVoteCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/LPCalculatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/Consts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/GenresHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/genres/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/pages/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ui/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/dataholder/GenresHandlerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/VoteAverageCalculatorTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/Consts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/GenresHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/PagesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/PagesHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/genres/Genres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/pages/Pages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/CalculatorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/GenresHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/dataholder/PagesHandlerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/CalculatorThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/ui/CalculatorThreadTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QJtzeuvukB0ONZzazmpyCiT1H8" />

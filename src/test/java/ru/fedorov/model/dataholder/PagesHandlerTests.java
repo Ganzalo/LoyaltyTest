@@ -1,20 +1,20 @@
-package ru.fedorov.connection;
+package ru.fedorov.model.dataholder;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.fedorov.model.AverageVote;
+import ru.fedorov.model.vo.pages.Page;
 
 import java.util.List;
 
 public class PagesHandlerTests {
 
-    private PagesHandler pagesHandler;
+    private PagesHolder pagesHandler;
 
     @BeforeEach
     void init() {
-        pagesHandler = new PagesHandler();
+        pagesHandler = new PagesHolder();
     }
 
     @DisplayName("Return not null")
@@ -48,7 +48,7 @@ public class PagesHandlerTests {
 
             Assertions.assertEquals(2, pagesHandler.getCurrentPage());
 
-            List<AverageVote> averageVotes = pagesHandler.getAverageVotesNextPages(0);
+            List<Page> averageVotes = pagesHandler.getAverageVotesNextPages(0);
 
             Assertions.assertEquals(pagesHandler.getMaxPage(),  pagesHandler.getCurrentPage());
             Assertions.assertFalse(pagesHandler.hasNext());

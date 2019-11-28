@@ -1,14 +1,13 @@
-package ru.fedorov.model;
+package ru.fedorov.model.vo.genres;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class Genres implements Serializable {
+public class Genres {
 
     private List<Genre> genres;
 

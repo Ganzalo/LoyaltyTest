@@ -1,13 +1,13 @@
-package ru.fedorov.workers;
+package ru.fedorov.model;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class CalculatorThread extends Thread {
 
-    private AverageVoteCalculator voteAverageCalculator;
+    private Calculator voteAverageCalculator;
 
-    public CalculatorThread(AverageVoteCalculator voteAverageCalculator) {
+    public CalculatorThread(Calculator voteAverageCalculator) {
         this.voteAverageCalculator = voteAverageCalculator;
     }
 

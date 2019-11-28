@@ -1,10 +1,11 @@
-package ru.fedorov.connection;
+package ru.fedorov.model.dataholder;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ru.fedorov.model.AverageVote;
-import ru.fedorov.model.Page;
+import ru.fedorov.Console;
+import ru.fedorov.model.vo.pages.Page;
+import ru.fedorov.model.vo.pages.Pages;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,9 +13,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static ru.fedorov.connection.Consts.REQUEST_AVERAGE_VOTE;
+import static ru.fedorov.model.dataholder.Consts.REQUEST_AVERAGE_VOTE;
 
-public class PagesHandler {
+public class PagesHolder {
 
     private int currentPage = 1;
     private final int maxPage = maxPage();
@@ -29,20 +30,16 @@ public class PagesHandler {
 
     private int maxPage() {
         ObjectNode node = null;
-        ObjectMapper mapper = new ObjectMapper();
-
         try {
-            node = mapper.readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage), ObjectNode.class);
+            node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage), ObjectNode.class);
         } catch (IOException e) {
-            System.out.println("Ошибка получения значения максимальной страницы ");
-            e.printStackTrace();
+            Console.writeMessage("Ошибка получения значения максимальной страницы");
         }
+
+        if (node == null)
+            return 0;
 
         int maxPages = 0;
-        if (node == null) {
-            return maxPages;
-        }
-
         if (node.has("total_pages")) {
             maxPages = node.get("total_pages").asInt();
         }
@@ -62,7 +59,7 @@ public class PagesHandler {
      * @see #getAverageVoteByPage()
      */
 
-    public List<AverageVote> getAverageVotesNextPages(int pageStep) {
+    public List<Page> getAverageVotesNextPages(int pageStep) {
         if (!hasNext() || pageStep < 0) {
             return Collections.emptyList();
         }
@@ -75,7 +72,7 @@ public class PagesHandler {
         if (endPage > this.maxPage)
             endPage = this.maxPage;
 
-        List<AverageVote> pages = new ArrayList<>();
+        List<Page> pages = new ArrayList<>();
         while (this.currentPage < endPage) {
             pages.addAll(getAverageVoteByPage());
             this.currentPage++;
@@ -87,20 +84,20 @@ public class PagesHandler {
         return this.maxPage > this.currentPage;
     }
 
-    private List<AverageVote> getAverageVoteByPage() {
-        Page page = null;
+    private List<Page> getAverageVoteByPage() {
+        Pages page = null;
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             page = mapper.readValue(new URL(REQUEST_AVERAGE_VOTE + this.currentPage),
-                                    new TypeReference<Page>() {});
+                                    new TypeReference<Pages>() {});
         } catch (IOException e) {
-            System.out.println("Ошибка получения страницы ");
+            Console.writeMessage("Ошибка получения страницы ");
             e.printStackTrace();
         }
 
         if (page == null) {
-            System.out.println("Пропуск страницы " + currentPage);
+            Console.writeMessage("Пропуск страницы " + currentPage);
             return Collections.emptyList();
         }
 

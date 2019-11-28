@@ -1,7 +1,7 @@
-package ru.fedorov.workers;
+package ru.fedorov.model;
 
-import ru.fedorov.connection.PagesHandler;
-import ru.fedorov.model.AverageVote;
+import ru.fedorov.model.dataholder.PagesHolder;
+import ru.fedorov.model.vo.pages.Page;
 
 import java.math.RoundingMode;
 import java.text.NumberFormat;
@@ -9,19 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static ru.fedorov.workers.GenresHolder.GENRES;
-
-public class AverageVoteCalculator {
+public class Calculator {
 
     private final static int PAGE_STEP = 30;
-    private PagesHandler pagesHandler;
+    private PagesHolder pagesHandler = new PagesHolder();
     private float currProgress;
     private float averageVoteResult;
     private boolean stopCalculate = false;
 
     private int genreId;
 
-    public AverageVoteCalculator(int genreId) {
+    public Calculator(int genreId) {
         this.genreId = genreId;
     }
 
@@ -42,14 +40,7 @@ public class AverageVoteCalculator {
     }
 
     public void startCalculate() {
-        if (GENRES.get(genreId) == null) {
-            stopCalculate = true;
-            averageVoteResult = 0.0f;
-            return;
-        }
-
-        pagesHandler = new PagesHandler();
-        List<AverageVote> averageVoteByFilms = new ArrayList<>();
+        List<Page> averageVoteByFilms = new ArrayList<>();
 
         while (pagesHandler.hasNext() && !stopCalculate) {
             averageVoteByFilms.addAll(pagesHandler.getAverageVotesNextPages(PAGE_STEP));
@@ -60,10 +51,10 @@ public class AverageVoteCalculator {
         stopCalculate = true;
     }
 
-    private float calculateAverageVoteByGenre(List<AverageVote> averageVotesByFilms) {
+    private float calculateAverageVoteByGenre(List<Page> averageVotesByFilms) {
         float sum = 0;
         int count = 0;
-        for(AverageVote averageVoteByFilm : averageVotesByFilms) {
+        for(Page averageVoteByFilm : averageVotesByFilms) {
             for (int genreIds : averageVoteByFilm.getGenreIds()) {
                 if (averageVoteByFilm.getVoteCount() != 0 && genreIds == this.genreId) {
                     sum += averageVoteByFilm.getAverageVote();
