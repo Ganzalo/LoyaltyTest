@@ -1,6 +1,6 @@
 package ru.fedorov.ui;
 
-import ru.fedorov.Console;
+import ru.fedorov.util.Console;
 import ru.fedorov.model.AverageVoteCalculator;
 
 import java.util.Map;

@@ -2,7 +2,7 @@ package ru.fedorov.model.loyaltyplant.dataholder;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.fedorov.Console;
+import ru.fedorov.util.Console;
 import ru.fedorov.model.loyaltyplant.vo.genres.Genre;
 import ru.fedorov.model.loyaltyplant.vo.genres.Genres;
 
