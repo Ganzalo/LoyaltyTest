@@ -1,11 +1,11 @@
-package ru.fedorov.model.dataholder;
+package ru.fedorov.model.loyaltyplant.dataholder;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import ru.fedorov.Console;
-import ru.fedorov.model.vo.pages.Page;
-import ru.fedorov.model.vo.pages.Pages;
+import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
+import ru.fedorov.model.loyaltyplant.vo.filmsinfo.Page;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,25 +13,35 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static ru.fedorov.model.dataholder.Constants.REQUEST_AVERAGE_VOTE;
+import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE_VOTE;
 
 /**
- *  Получение информации
- * */
+ * Получение информации о фильмах
+ * работа класса напоминает итератор
+ */
 
-public class PagesHolder {
+class FilmsInfoHolder {
 
+    /**
+     * текущая страница фильмов
+     */
     private int currentPage = 1;
+    /**
+     * максимальная страница фильмов
+     */
     private final int maxPage = maxPage();
 
-    public int getCurrentPage() {
+    int getCurrentPage() {
         return currentPage;
     }
 
-    public int getMaxPage() {
+    int getMaxPage() {
         return maxPage;
     }
 
+    /**
+     * Получение значения максимальной страницы
+     */
     private int maxPage() {
         ObjectNode node = null;
         try {
@@ -57,16 +67,15 @@ public class PagesHolder {
      * первышает maxPage то будет взято AverageVote с максимального кол-ва страниц.
      *
      * @param pageStep кол-во страниц с которых будут получены объекты Page. Если
-     *                  pageStep = 0  то запрос будет сделан для всех страниц. Если
-     *                  pageStep < 0 то Collections.emptyList()
+     *                 pageStep = 0  то запрос будет сделан для всех страниц. Если
+     *                 pageStep < 0 то Collections.emptyList()
      * @return List<Page> если еще есть страницы, иначе Collections.emptyList()
-     * @see #getAverageVoteByPage()
+     * @see #getPage()
      */
 
-    public List<Page> getAverageVotesNextPages(int pageStep) {
-        if (!hasNext() || pageStep < 0) {
+    List<FilmInfo> getNextPages(int pageStep) {
+        if (!hasNext() || pageStep < 0)
             return Collections.emptyList();
-        }
 
         if (pageStep == 0)
             pageStep = maxPage;
@@ -76,28 +85,34 @@ public class PagesHolder {
         if (endPage > this.maxPage)
             endPage = this.maxPage;
 
-        List<Page> pages = new ArrayList<>();
+        List<FilmInfo> pages = new ArrayList<>();
         while (this.currentPage < endPage) {
-            pages.addAll(getAverageVoteByPage());
+            pages.addAll(getPage());
             this.currentPage++;
         }
+
         return new ArrayList<>(pages);
     }
 
-    public boolean hasNext() {
+    /**
+     * Проверяет наличие следующий странциы
+     */
+    boolean hasNext() {
         return this.maxPage > this.currentPage;
     }
 
-    private List<Page> getAverageVoteByPage() {
-        Pages page = null;
+    /**
+     * Получает лист объектов Page за страницу по endpoint c помощью currentPage
+     */
+    private List<FilmInfo> getPage() {
+        Page page = null;
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             page = mapper.readValue(new URL(REQUEST_AVERAGE_VOTE + this.currentPage),
-                                    new TypeReference<Pages>() {});
+                    new TypeReference<Page>() {});
         } catch (IOException e) {
             Console.writeMessage("Ошибка получения страницы ");
-            e.printStackTrace();
         }
 
         if (page == null) {

@@ -1,4 +1,4 @@
-package ru.fedorov.model.vo.genres;
+package ru.fedorov.model.loyaltyplant.vo.genres;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Genre  {
+public class Genre {
 
     private int id;
     private String name;

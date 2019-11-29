@@ -1,4 +1,4 @@
-package ru.fedorov.model.dataholder;
+package ru.fedorov.model.loyaltyplant.dataholder;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

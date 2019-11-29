@@ -3,18 +3,23 @@ package ru.fedorov.ui;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.fedorov.model.Calculator;
-import ru.fedorov.model.CalculatorThread;
+import ru.fedorov.model.loyaltyplant.LPCalculatorImpl;
 
 public class CalculatorThreadTest {
 
-    private CalculatorThread calculatorThread;
+    private LPCalculatorImpl calculatorThread;
 
     @DisplayName("voteAverage Test")
     @Test
     void voteAverageTest() {
-        calculatorThread = new CalculatorThread(new Calculator(-1));
-        calculatorThread.start();
-        Assertions.assertEquals(0, calculatorThread.getResult());
+        calculatorThread = new LPCalculatorImpl();
+        calculatorThread.calculate(-1);
+        float result = -1.0f;
+        try {
+            result = calculatorThread.getResult();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals(0, result);
     }
 }

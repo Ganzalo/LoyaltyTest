@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/DataHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVoteCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVoteCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/LPCalculatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/LPCalculatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/GenresHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/GenresHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/PagesHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/PagesHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/CalculatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/CalculatorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/LPCalculatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/LPCalculatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/GenresHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/GenresHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/dataholder/PagesHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/FilmsInfoHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/genres/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/genres/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/genres/Genres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/genres/Genres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/filmsinfo/FilmInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/vo/pages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/filmsinfo/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ui/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/dataholder/GenresHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/loyaltyplant/dataholder/GenresHandlerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/dataholder/PagesHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/loyaltyplant/dataholder/PagesHandlerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/ui/CalculatorThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/ui/CalculatorThreadTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,6 +62,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.fedorov.model.LoyaltyPlant" />
+      <recent name="ru.fedorov.model.dataholder" />
       <recent name="ru.fedorov.connection" />
     </key>
   </component>
@@ -72,7 +85,7 @@
       <module name="LoyaltyTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.fedorov.model.*" />
+          <option name="PATTERN" value="ru.fedorov.model.loyaltyplant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

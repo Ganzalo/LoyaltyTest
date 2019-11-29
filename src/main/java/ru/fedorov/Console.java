@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
 
+/**
+ * Класс для работы с консолью (по сути Utility класс)
+ */
 public class Console {
 
     private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
@@ -23,6 +26,11 @@ public class Console {
         return input;
     }
 
+    /**
+     * Запрос id жанра
+     *
+     * @return int id жанра
+     */
     public static int askIdGenre() {
         Integer id = null;
         while (id == null) {
@@ -30,12 +38,15 @@ public class Console {
             try {
                 id = Integer.parseInt(readString());
             } catch (Exception e) {
-                writeMessage("Id не существует.");
+                writeMessage("Задайте id жанра числом.");
             }
         }
         return id;
     }
 
+    /**
+     * Печатает список жанров по заданному формату
+     */
     public static void printGenres(Map<Integer, String> genres) {
         for (Map.Entry<Integer, String> entry : genres.entrySet())
             writeMessage(String.format("%d = %s", entry.getKey(), entry.getValue()));

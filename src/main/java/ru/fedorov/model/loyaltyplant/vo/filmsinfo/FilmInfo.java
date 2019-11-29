@@ -1,4 +1,4 @@
-package ru.fedorov.model.vo.pages;
+package ru.fedorov.model.loyaltyplant.vo.filmsinfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +14,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Page {
+public class FilmInfo {
 
     @JsonProperty("genre_ids")
     private int[] genreIds;
@@ -27,7 +27,7 @@ public class Page {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Page page = (Page) o;
+        FilmInfo page = (FilmInfo) o;
         return Float.compare(page.getVoteCount(), getVoteCount()) == 0 &&
                 Float.compare(page.getAverageVote(), getAverageVote()) == 0 &&
                 Arrays.equals(getGenreIds(), page.getGenreIds());

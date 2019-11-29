@@ -1,10 +1,10 @@
-package ru.fedorov.model.dataholder;
+package ru.fedorov.model.loyaltyplant.dataholder;
 
 /**
  * Константы описывают Endpoint к ресурсам
  */
 
-public final class Constants {
+final class Constants {
 
     private static final String SITE = "https://easy.test-assignment-a.loyaltyplant.net";
     private static final String KEY = "72b56103e43843412a992a8d64bf96e9";

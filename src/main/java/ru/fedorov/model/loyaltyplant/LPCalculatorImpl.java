@@ -1,21 +1,28 @@
-package ru.fedorov.model;
+package ru.fedorov.model.loyaltyplant;
 
-import ru.fedorov.model.dataholder.GenresHolder;
+import ru.fedorov.model.AverageVoteCalculator;
 
 import java.util.Map;
 
+/**
+ * Реализация AverageVoteCalculator для сайта loyaltyPlant
+ */
 public class LPCalculatorImpl implements AverageVoteCalculator {
 
     private CalculatorThread calculatorThread;
 
-    @Override
-    public Map<Integer, String> getGenres() {
-        return GenresHolder.getGenres();
+    public LPCalculatorImpl() {
+        calculatorThread = new CalculatorThread();
     }
 
     @Override
-    public void start(int id) {
-        calculatorThread = new CalculatorThread(new Calculator(id));
+    public Map<Integer, String> getGenres() {
+        return calculatorThread.getGenres();
+    }
+
+    @Override
+    public void calculate(int id) {
+        calculatorThread.setGenreId(id);
         calculatorThread.start();
     }
 
