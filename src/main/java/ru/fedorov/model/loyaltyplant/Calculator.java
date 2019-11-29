@@ -47,11 +47,11 @@ class Calculator {
     }
 
     Map<Integer, String> getGenres() {
-        return dataHolder.getGenres();
+        return this.dataHolder.getGenres();
     }
 
     boolean isStopCalculate() {
-        return stopCalculate;
+        return this.stopCalculate;
     }
 
     void setStopCalculate(boolean stop) {
@@ -59,15 +59,15 @@ class Calculator {
     }
 
     float getProgress() {
-        return progress;
+        return this.progress;
     }
 
     float getAverageVote() {
-        return averageVoteResult;
+        return this.averageVoteResult;
     }
 
     /**
-     * Подсчет средний оценки за жанр
+     * Подсчет средней оценки за жанр
      */
     void calculate() {
         averageVoteResult = calculateAverageVote(collectData());
@@ -90,10 +90,10 @@ class Calculator {
     }
 
     /**
-     * Логика подсчета средний оценки за жанр
+     * Логика подсчета средней оценки за жанр
      *
      * @param filmsInfo информация о фильмах
-     * @return float средния оценка за жанр
+     * @return float средняя оценка за жанр
      */
     private float calculateAverageVote(List<FilmInfo> filmsInfo) {
         float sum = 0;

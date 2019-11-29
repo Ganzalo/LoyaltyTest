@@ -3,27 +3,26 @@ package ru.fedorov.model.loyaltyplant.dataholder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.fedorov.model.loyaltyplant.vo.genres.Genre;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class GenresHandlerTests {
 
     @DisplayName("Return not null")
     @Test
     void getGenresNotNull() {
-        Assertions.assertNotNull(GenresHolder.getGenres());
+        Assertions.assertNotNull(GenresHolder.requestGenres());
     }
 
     @DisplayName("Return Map<Integer, String>")
     @Test
     void getGenresReturnClass() {
-        Map<Integer, String> genres = GenresHolder.getGenres();
+        List<Genre> genres = GenresHolder.requestGenres();
         if(genres.size() > 1) {
-            Map<Integer, String> expect = Collections.unmodifiableMap(new HashMap<>());
-            Assertions.assertEquals(expect.getClass(), GenresHolder.getGenres().getClass());
-            Assertions.assertEquals(expect.getClass().getName(), GenresHolder.getGenres().getClass().getName());
+            List<Genre> expect = new ArrayList<>();
+            Assertions.assertEquals(expect.getClass(), genres.getClass());
+            Assertions.assertEquals(expect.getClass().getName(), genres.getClass().getName());
         }
     }
 
