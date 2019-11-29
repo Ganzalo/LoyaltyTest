@@ -7,7 +7,7 @@ import ru.fedorov.model.loyaltyplant.vo.genres.Genre;
 
 import java.util.*;
 
-public class GenresHandlerTests {
+public class GenresHolderTests {
 
     @DisplayName("Return not null")
     @Test

@@ -17,99 +17,34 @@ import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE
 
 /**
  * Получение информации о фильмах
- * работа класса напоминает итератор
  */
 
 class FilmsInfoHolder {
 
     /**
-     * текущая страница фильмов
-     */
-    private int currentPage = 1;
-    /**
-     * максимальная страница фильмов
-     */
-    private final int maxPage = maxPage();
-
-    int getCurrentPage() {
-        return currentPage;
-    }
-
-    int getMaxPage() {
-        return maxPage;
-    }
-
-    /**
      * Получение значения максимальной страницы
      */
-    private int maxPage() {
+    static int maxPage() {
         ObjectNode node = null;
         try {
-            node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage), ObjectNode.class);
+            node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + "1"), ObjectNode.class);
         } catch (IOException e) {
             Console.writeMessage("Ошибка получения значения максимальной страницы");
         }
 
-        if (node == null)
-            return 0;
+        if (node != null && node.has("total_pages"))
+            return node.get("total_pages").asInt();
 
-        int maxPages = 0;
-        if (node.has("total_pages")) {
-            maxPages = node.get("total_pages").asInt();
-        }
-
-        return maxPages;
-    }
-
-    /**
-     * Получает лист объектов Page с каждой страницы начиная с currentPage вплоть пока
-     * не будет выполнено #getAverageVoteByPage() pageStep раз. Если pageStep + currPage
-     * первышает maxPage то будет взято AverageVote с максимального кол-ва страниц.
-     *
-     * @param pageStep кол-во страниц с которых будут получены объекты Page. Если
-     *                 pageStep = 0  то запрос будет сделан для всех страниц. Если
-     *                 pageStep < 0 то Collections.emptyList()
-     * @return List<Page> если еще есть страницы, иначе Collections.emptyList()
-     * @see #getPage()
-     */
-
-    List<FilmInfo> getNextPages(int pageStep) {
-        if (!hasNext() || pageStep < 0)
-            return Collections.emptyList();
-
-        if (pageStep == 0)
-            pageStep = maxPage;
-
-        int endPage = this.currentPage + pageStep;
-
-        if (endPage > this.maxPage)
-            endPage = this.maxPage;
-
-        List<FilmInfo> pages = new ArrayList<>();
-        while (this.currentPage < endPage) {
-            pages.addAll(getPage());
-            this.currentPage++;
-        }
-
-        return new ArrayList<>(pages);
-    }
-
-    /**
-     * Проверяет наличие следующий странциы
-     */
-    boolean hasNext() {
-        return this.maxPage > this.currentPage;
+        return 0;
     }
 
     /**
      * Получает лист объектов Page за страницу по endpoint c помощью currentPage
      */
-    private List<FilmInfo> getPage() {
+    static List<FilmInfo> getPage(int currentPage) {
         Page page = null;
-        ObjectMapper mapper = new ObjectMapper();
-
         try {
-            page = mapper.readValue(new URL(REQUEST_AVERAGE_VOTE + this.currentPage),
+            page = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage),
                     new TypeReference<Page>() {});
         } catch (IOException e) {
             Console.writeMessage("Ошибка получения страницы ");
