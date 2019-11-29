@@ -17,27 +17,23 @@ import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_GENRES;
 /**
  * Получение жанров по endpoint
  */
-
 class GenresHolder {
 
     /**
      * Запрашивает список жанров по endpoint
      *
-     * @return List<Genre> если еще есть страницы, иначе Collections.emptyList()
+     * @return List<Genre> если есть жанры, иначе Collections.emptyList()
      */
     static List<Genre> requestGenres() {
+
         Genres genres = null;
         try {
-            genres = new ObjectMapper().readValue(new URL(REQUEST_GENRES), new TypeReference<Genres>() {
-            });
+            genres = new ObjectMapper().readValue(new URL(REQUEST_GENRES), new TypeReference<Genres>() {});
         } catch (IOException e) {
             Console.writeMessage("Ошибка получения списка жанров.");
         }
 
-        if (genres == null)
-            return Collections.emptyList();
-        else
-            return new ArrayList<>(genres.getGenres());
+        return genres == null ? new ArrayList<>(Collections.emptyList()) : new ArrayList<>(genres.getGenres());
     }
 
 }
