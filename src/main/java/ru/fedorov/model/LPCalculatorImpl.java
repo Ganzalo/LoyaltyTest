@@ -35,11 +35,9 @@ public class LPCalculatorImpl implements AverageVoteCalculator {
     }
 
     @Override
-    public float getResult() {
+    public float getResult() throws InterruptedException {
+        calculatorThread.join();
         return calculatorThread.getResult();
     }
 
-    public void waitResult() throws InterruptedException {
-        calculatorThread.join();
-    }
 }

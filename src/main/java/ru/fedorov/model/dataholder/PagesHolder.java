@@ -13,7 +13,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static ru.fedorov.model.dataholder.Consts.REQUEST_AVERAGE_VOTE;
+import static ru.fedorov.model.dataholder.Constants.REQUEST_AVERAGE_VOTE;
+
+/**
+ *  Получение информации
+ * */
 
 public class PagesHolder {
 
@@ -48,14 +52,14 @@ public class PagesHolder {
     }
 
     /**
-     * Получает лист объектов AverageVote с каждой страницы начиная с currentPage вплоть пока
+     * Получает лист объектов Page с каждой страницы начиная с currentPage вплоть пока
      * не будет выполнено #getAverageVoteByPage() pageStep раз. Если pageStep + currPage
      * первышает maxPage то будет взято AverageVote с максимального кол-ва страниц.
      *
-     * @param pageStep кол-во страниц с которых будут получены объекты AverageVote. Если
+     * @param pageStep кол-во страниц с которых будут получены объекты Page. Если
      *                  pageStep = 0  то запрос будет сделан для всех страниц. Если
      *                  pageStep < 0 то Collections.emptyList()
-     * @return List<AverageVote> если еще есть страницы, иначе Collections.emptyList()
+     * @return List<Page> если еще есть страницы, иначе Collections.emptyList()
      * @see #getAverageVoteByPage()
      */
 

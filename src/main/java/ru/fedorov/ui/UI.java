@@ -41,15 +41,16 @@ public class UI {
                 calculator.stop();
         }
 
+        float result = 0.0f;
         try {
-            calculator.waitResult();
+            result = calculator.getResult();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         Console.writeMessage("Обработано данных " + calculator.getProgress() + "%");
         Console.writeMessage("Обработка завершена! Значение средней оценки за жанр " + genres.get(id) +
-                " = " + calculator.getResult());
+                " = " + result);
         Console.writeMessage("Конец");
     }
 

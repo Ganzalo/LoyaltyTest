@@ -14,10 +14,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ru.fedorov.model.dataholder.Consts.REQUEST_GENRES;
+import static ru.fedorov.model.dataholder.Constants.REQUEST_GENRES;
+
+/**
+ *  Получение жанров по endpoint
+ * */
 
 public class GenresHolder {
 
+    /**
+     * Запрашивает список жанров по endpoint
+     *
+     * @return List<Genre> если еще есть страницы, иначе Collections.emptyList()
+     */
     private static List<Genre> requestGenres()  {
         Genres genres = null;
         try {
@@ -32,6 +41,11 @@ public class GenresHolder {
             return new ArrayList<>(genres.getGenres());
     }
 
+    /**
+     * Перобразует List<Genre> в Map<Integer, String> и оборачивает в unmodifiableMap
+     *
+     * @return Map<Integer, String> обернутую в unmodifiableMap
+     */
     public static Map<Integer, String> getGenres() {
         return Collections.unmodifiableMap(requestGenres().stream()
                 .collect(Collectors.toMap(Genre::getId, Genre::getName)));
