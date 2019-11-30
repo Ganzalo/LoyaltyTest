@@ -11,13 +11,13 @@ public class GenresHolderTests {
 
     @DisplayName("Return not null")
     @Test
-    void getGenresNotNull() {
+    void requestGenresNotNull() {
         Assertions.assertNotNull(GenresHolder.requestGenres());
     }
 
-    @DisplayName("Return Map<Integer, String>")
+    @DisplayName("Return List<Genre>")
     @Test
-    void getGenresReturnClass() {
+    void requestGenresReturnClass() {
         List<Genre> genres = GenresHolder.requestGenres();
         if(genres.size() > 1) {
             List<Genre> expect = new ArrayList<>();

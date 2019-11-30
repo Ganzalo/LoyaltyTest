@@ -21,7 +21,7 @@ public class DataHolder {
     /**
      * максимальная страница фильмов
      */
-    private final int maxPage = FilmsInfoHolder.maxPage();
+    private final int maxPage = FilmsInfoHolder.requestMaxPage();
 
     public int getCurrentPage() {
         return this.currentPage;
@@ -42,16 +42,16 @@ public class DataHolder {
     }
 
     /**
-     * Получает лист объектов Page с каждой страницы начиная с currentPage вплоть пока
-     * не будет выполнено #getAverageVoteByPage() pageStep раз. Если pageStep + currPage
+     * Получает лист объектов FilmInfo с каждой страницы начиная с currentPage вплоть пока
+     * не будет выполнено #requestPage() pageStep раз. Если pageStep + currPage
      * первышает maxPage то будет взято AverageVote с максимального кол-ва страниц.
      *
-     * @param pageStep кол-во страниц с которых будут получены объекты Page. Если
+     * @param pageStep кол-во страниц с которых будут получены объекты FilmInfo. Если
      *                 pageStep = 0  то запрос будет сделан для всех страниц. Если
      *                 pageStep < 0 то Collections.emptyList()
-     * @return List<Page> если еще есть страницы, иначе Collections.emptyList()
+     * @return List<FilmInfo> если еще есть страницы, иначе Collections.emptyList()
      */
-    public List<FilmInfo> getNextPages(int pageStep) {
+    public List<FilmInfo> getFilmsInfo(int pageStep) {
         if (!hasNextPage() || pageStep < 0)
             return Collections.emptyList();
 
@@ -65,7 +65,7 @@ public class DataHolder {
 
         List<FilmInfo> pages = new ArrayList<>();
         while (this.currentPage < endPage) {
-            pages.addAll(FilmsInfoHolder.getPage(this.currentPage));
+            pages.addAll(FilmsInfoHolder.requestPage(this.currentPage));
             this.currentPage++;
         }
 

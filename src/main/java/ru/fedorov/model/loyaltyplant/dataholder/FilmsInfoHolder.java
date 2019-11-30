@@ -20,11 +20,10 @@ import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE
  */
 
 class FilmsInfoHolder {
-
     /**
      * Получение значения максимальной страницы
      */
-    static int maxPage() {
+    static int requestMaxPage() {
         ObjectNode node = null;
         try {
             node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + "1"), ObjectNode.class);
@@ -39,9 +38,9 @@ class FilmsInfoHolder {
     }
 
     /**
-     * Получает лист объектов Page за страницу по endpoint c помощью currentPage
+     * Получает лист объектов FilmInfo за страницу по endpoint c помощью currentPage
      */
-    static List<FilmInfo> getPage(int currentPage) {
+    static List<FilmInfo> requestPage(int currentPage) {
         Page page = null;
         try {
             page = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage),

@@ -25,7 +25,6 @@ class GenresHolder {
      * @return List<Genre> если есть жанры, иначе Collections.emptyList()
      */
     static List<Genre> requestGenres() {
-
         Genres genres = null;
         try {
             genres = new ObjectMapper().readValue(new URL(REQUEST_GENRES), new TypeReference<Genres>() {});

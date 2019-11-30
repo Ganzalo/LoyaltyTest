@@ -24,7 +24,7 @@ class Calculator {
     /**
      * Данные для бизнес-логики
      */
-    private DataHolder dataHolder = new DataHolder();
+    private DataHolder dataHolder;
     /**
      * Текущий прогресс страниц
      */
@@ -32,7 +32,7 @@ class Calculator {
     /**
      * Результат подсчета
      */
-    private float averageVoteResult;
+    private float averageVote;
     /**
      * Флаг прекращения подсчета
      */
@@ -63,14 +63,17 @@ class Calculator {
     }
 
     float getAverageVote() {
-        return this.averageVoteResult;
+        return this.averageVote;
     }
 
+    Calculator() {
+        dataHolder = new DataHolder();
+    }
     /**
      * Подсчет средней оценки за жанр
      */
     void calculate() {
-        averageVoteResult = calculateAverageVote(collectData());
+        averageVote = calculateAverageVote(collectData());
         stopCalculate = true;
     }
 
@@ -83,7 +86,7 @@ class Calculator {
         List<FilmInfo> filmsInfo = new ArrayList<>();
 
         while (dataHolder.hasNextPage() && !stopCalculate) {
-            filmsInfo.addAll(dataHolder.getNextPages(PAGE_STEP));
+            filmsInfo.addAll(dataHolder.getFilmsInfo(PAGE_STEP));
             setProgressData();
         }
         return filmsInfo;
