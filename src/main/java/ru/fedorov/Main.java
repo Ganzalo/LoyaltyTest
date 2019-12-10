@@ -1,5 +1,9 @@
 package ru.fedorov;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.fedorov.model.loyaltyplant.LPCalculatorImpl;
 import ru.fedorov.ui.UI;
 
@@ -44,8 +48,17 @@ import ru.fedorov.ui.UI;
  * Классы из пакета vo публичные.
  * Взаимодействие с классоми из пакета model происходит через класс LPCalculatorImpl, остальные классы default visible.
  */
+
+@SpringBootApplication
+@RestController
 public class Main {
     public static void main(String[] args)  {
-        new UI(new LPCalculatorImpl());
+        SpringApplication.run(Main.class, args);
+       // new UI(new LPCalculatorImpl());
+    }
+
+    @RequestMapping(value="/")
+    public String Test() {
+        return "Hello World!";
     }
 }
