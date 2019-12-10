@@ -2,41 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVoteCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/CalculatorThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/LPCalculatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/DataHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/FilmsInfoHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/dataholder/GenresHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/filmsinfo/FilmInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/genres/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/ui/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/util/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/loyaltyplant/dataholder/DataHolderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/loyaltyplant/dataholder/FilmsInfoHolderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/model/loyaltyplant/dataholder/GenresHolderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/fedorov/ui/CalculatorThreadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/Consts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/GenresHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/connection/PagesHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/AverageVote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Genres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/genres/Genres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/model/loyaltyplant/vo/filmsinfo/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/AverageVoteCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/CalculatorThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/workers/GenresHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/GenresHandlerTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/connection/PagesHandlerTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/fedorov/workers/CalculatorThreadTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/LoyaltyTest.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +22,65 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="LoyaltyTest" />
@@ -67,13 +102,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QJtzeuvukB0ONZzazmpyCiT1H8" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="C:/lesson/JavaRushTasks" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -82,19 +124,100 @@
       <recent name="ru.fedorov.connection" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.fedorov.Main" />
-      <module name="LoyaltyTest" />
+      <module name="LoyaltyTest.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.fedorov.model.loyaltyplant.*" />
+          <option name="PATTERN" value="ru.fedorov.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="LoyaltyTest [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LoyaltyTest [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LoyaltyTest [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="classes" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LoyaltyTest [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="All Tests" type="JUnit" factoryName="JUnit">
       <option name="PACKAGE_NAME" value="" />
@@ -109,64 +232,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GenresHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LoyaltyTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.fedorov.connection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.fedorov.connection" />
-      <option name="MAIN_CLASS_NAME" value="ru.fedorov.connection.GenresHandlerTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PagesHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LoyaltyTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.fedorov.connection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.fedorov.connection" />
-      <option name="MAIN_CLASS_NAME" value="ru.fedorov.connection.PagesHandlerTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VoteAverageCalculatorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LoyaltyTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.fedorov.workers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.fedorov.workers" />
-      <option name="MAIN_CLASS_NAME" value="ru.fedorov.workers.VoteAverageCalculatorTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.LoyaltyTest [build]" />
+      <item itemvalue="Gradle.LoyaltyTest [testClasses]" />
       <item itemvalue="JUnit.All Tests" />
-      <item itemvalue="JUnit.GenresHandlerTests" />
-      <item itemvalue="JUnit.PagesHandlerTests" />
-      <item itemvalue="JUnit.VoteAverageCalculatorTests" />
+      <item itemvalue="Gradle.LoyaltyTest [assemble]" />
+      <item itemvalue="Gradle.LoyaltyTest [classes]" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.VoteAverageCalculatorTests" />
-        <item itemvalue="JUnit.PagesHandlerTests" />
-        <item itemvalue="JUnit.GenresHandlerTests" />
+        <item itemvalue="Gradle.LoyaltyTest [classes]" />
+        <item itemvalue="Gradle.LoyaltyTest [assemble]" />
+        <item itemvalue="Gradle.LoyaltyTest [build]" />
+        <item itemvalue="Gradle.LoyaltyTest [testClasses]" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +289,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2472" y="197" key="#Project_Structure" timestamp="1575988306064">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2472" y="197" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988306063" />
+    <state x="2660" y="256" key="FileChooserDialogImpl" timestamp="1575988270891">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2660" y="256" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988270891" />
+    <state width="1876" height="281" key="GridCell.Tab.0.bottom" timestamp="1575991241703">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241703" />
+    <state width="1876" height="281" key="GridCell.Tab.0.center" timestamp="1575991241702">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="281" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241702" />
+    <state width="1876" height="281" key="GridCell.Tab.0.left" timestamp="1575991241702">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="281" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241702" />
+    <state width="1876" height="281" key="GridCell.Tab.0.right" timestamp="1575991241703">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="281" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241703" />
     <state x="184" y="89" key="MergeDialog" timestamp="1575980927493">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -217,6 +321,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="672" y="255" key="MultipleFileMergeDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1575980927496" />
+    <state x="2360" y="113" key="SettingsEditor" timestamp="1575988898517">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2360" y="113" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988898517" />
+    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1575988832237">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988832237" />
+    <state x="2536" y="245" width="672" height="677" key="run.anything.popup" timestamp="1575990824606">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2536" y="245" width="672" height="677" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575990824606" />
   </component>
   <component name="regexState">
     <option name="map">
