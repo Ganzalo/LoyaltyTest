@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id "org.liquibase.gradle" version "2.0.2"
 }
 
 repositories {
@@ -17,6 +18,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
     compile 'org.springframework.boot:spring-boot-starter-web:2.2.2.RELEASE'
+    compile 'org.postgresql:postgresql:42.2.9'
+    compile 'org.hibernate:hibernate-core:5.4.9.Final'
+    compile 'org.hibernate:hibernate-entitymanager:5.4.9.Final'
 }
 
 group = 'LoyaltyTest'

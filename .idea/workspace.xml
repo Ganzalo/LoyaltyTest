@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a156e622-22c6-460d-9124-d387ba444f38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/rest/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/fedorov/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +38,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
@@ -69,11 +45,6 @@
                 <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LoyaltyTest" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -233,19 +204,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.LoyaltyTest [build]" />
       <item itemvalue="Gradle.LoyaltyTest [testClasses]" />
-      <item itemvalue="JUnit.All Tests" />
       <item itemvalue="Gradle.LoyaltyTest [assemble]" />
       <item itemvalue="Gradle.LoyaltyTest [classes]" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All Tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LoyaltyTest [build]" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.LoyaltyTest [classes]" />
         <item itemvalue="Gradle.LoyaltyTest [assemble]" />
-        <item itemvalue="Gradle.LoyaltyTest [build]" />
         <item itemvalue="Gradle.LoyaltyTest [testClasses]" />
       </list>
     </recent_temporary>
@@ -293,26 +264,46 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2472" y="197" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988306063" />
+    <state x="2560" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576241044283">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2560" y="267" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576241044283" />
     <state x="2660" y="256" key="FileChooserDialogImpl" timestamp="1575988270891">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2660" y="256" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988270891" />
-    <state width="1876" height="281" key="GridCell.Tab.0.bottom" timestamp="1575991241703">
+    <state width="1876" height="281" key="GridCell.Tab.0.bottom" timestamp="1576254974716">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241703" />
-    <state width="1876" height="281" key="GridCell.Tab.0.center" timestamp="1575991241702">
+    <state width="1876" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576254974716" />
+    <state width="1876" height="281" key="GridCell.Tab.0.center" timestamp="1576254974716">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="281" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241702" />
-    <state width="1876" height="281" key="GridCell.Tab.0.left" timestamp="1575991241702">
+    <state width="1876" height="281" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576254974716" />
+    <state width="1876" height="281" key="GridCell.Tab.0.left" timestamp="1576254974715">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="281" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241702" />
-    <state width="1876" height="281" key="GridCell.Tab.0.right" timestamp="1575991241703">
+    <state width="1876" height="281" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576254974715" />
+    <state width="1876" height="281" key="GridCell.Tab.0.right" timestamp="1576254974716">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="281" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575991241703" />
+    <state width="1876" height="281" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576254974716" />
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom" timestamp="1575997165084">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575997165084" />
+    <state width="1876" height="358" key="GridCell.Tab.1.center" timestamp="1575997165084">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575997165084" />
+    <state width="1876" height="358" key="GridCell.Tab.1.left" timestamp="1575997165084">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575997165084" />
+    <state width="1876" height="358" key="GridCell.Tab.1.right" timestamp="1575997165084">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="358" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575997165084" />
     <state x="184" y="89" key="MergeDialog" timestamp="1575980927493">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -325,10 +316,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2360" y="113" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988898517" />
-    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1575988832237">
+    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1576241401343">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575988832237" />
+    <state x="2575" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576241401343" />
     <state x="2536" y="245" width="672" height="677" key="run.anything.popup" timestamp="1575990824606">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
