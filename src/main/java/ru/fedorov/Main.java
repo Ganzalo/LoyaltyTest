@@ -59,6 +59,5 @@ import ru.fedorov.ui.UI;
 public class Main {
     public static void main(String[] args)  {
         SpringApplication.run(Main.class, args);
-       // new UI(new LPCalculatorImpl());
     }
 }
