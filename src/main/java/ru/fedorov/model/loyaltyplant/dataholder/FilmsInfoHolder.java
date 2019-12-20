@@ -32,7 +32,8 @@ class FilmsInfoHolder {
         }
 
         if (node != null && node.has("total_pages"))
-            return node.get("total_pages").asInt();
+            return 20;//TODO
+            //return node.get("total_pages").asInt();
 
         return 0;
     }

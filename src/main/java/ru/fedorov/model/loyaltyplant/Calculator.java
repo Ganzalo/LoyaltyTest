@@ -14,8 +14,8 @@ import java.util.Map;
  * Бизнес логика приложения считает среднию оценку за жанр
  * данные берет из dataHolder.
  */
-
-class Calculator {
+public class Calculator {
+//class Calculator {//TODO
 
     /**
      * Шаг получение страниц для подсчета
@@ -66,9 +66,14 @@ class Calculator {
         return this.averageVote;
     }
 
-    Calculator() {
+    Calculator() {//TODO
         dataHolder = new DataHolder();
     }
+
+    public Calculator(int id) {//TODO
+        this.genreId = id;
+    }
+
     /**
      * Подсчет средней оценки за жанр
      */
@@ -98,7 +103,8 @@ class Calculator {
      * @param filmsInfo информация о фильмах
      * @return float средняя оценка за жанр
      */
-    private float calculateAverageVote(List<FilmInfo> filmsInfo) {
+    // private float calculateAverageVote(List<FilmInfo> filmsInfo) {//TODO
+    public float calculateAverageVote(List<FilmInfo> filmsInfo) {
         float sum = 0;
         int count = 0;
         for (FilmInfo averageVoteByFilm : filmsInfo) {

@@ -2,41 +2,23 @@ package ru.fedorov.model.loyaltyplant.vo.filmsinfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.Arrays;
-import java.util.Objects;
-
-@Data
+@Builder
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 @JsonIgnoreProperties(ignoreUnknown = true)
-
 public class FilmInfo {
 
+    @JsonProperty("id")
+    private long id;
     @JsonProperty("genre_ids")
     private int[] genreIds;
     @JsonProperty("vote_count")
-    private float voteCount;
+    private int voteCount;
     @JsonProperty("vote_average")
     private float averageVote;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FilmInfo page = (FilmInfo) o;
-        return Float.compare(page.getVoteCount(), getVoteCount()) == 0 &&
-                Float.compare(page.getAverageVote(), getAverageVote()) == 0 &&
-                Arrays.equals(getGenreIds(), page.getGenreIds());
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getVoteCount(), getAverageVote());
-        result = 31 * result + Arrays.hashCode(getGenreIds());
-        return result;
-    }
 }

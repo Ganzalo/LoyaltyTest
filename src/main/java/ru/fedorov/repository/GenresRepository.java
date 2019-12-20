@@ -7,8 +7,8 @@ import ru.fedorov.entity.Genre;
 import java.util.List;
 
 @Repository
-public interface GenresRepository extends CrudRepository<Genre, Long>{
+public interface GenresRepository extends CrudRepository<Genre, Integer>{
 
     List<Genre> findAll();
-
+    Genre findById(int id);
 }
