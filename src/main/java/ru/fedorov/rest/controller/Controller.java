@@ -1,10 +1,7 @@
 package ru.fedorov.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.fedorov.entity.AVGenre;
 import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
@@ -14,6 +11,7 @@ import ru.fedorov.model.loyaltyplant.dataholder.DataHolder;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
+import ru.fedorov.ui.fronttest.Message;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -56,16 +54,16 @@ public class Controller {
         return "All are created";
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/averageVote/{id}")
     public String getAverageVote(@PathVariable int id) {
-       if (!genresRepository.existsById(id))
-           return "No such genre this id";
+        if (!genresRepository.existsById(id))
+            return "No such genre this id";
 
-       AVGenre avGenre = averageVotesRepository.findById(id);
+        AVGenre avGenre = averageVotesRepository.findById(id);
         if (avGenre == null) {
             float averageVote = new Calculator(id).calculateAverageVote(filmsRepository.findAll().stream()
                     .map(FilmConverter::convertToFilmInfo).collect(Collectors.toList()));
-            Timestamp timestamp = Timestamp.valueOf( LocalDateTime.now());
+            Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
             avGenre = new AVGenre(id, averageVote, timestamp);
             averageVotesRepository.save(avGenre);
         }
@@ -79,13 +77,19 @@ public class Controller {
     @RequestMapping("/show")
     public String getGenres() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (Genre genre: genresRepository.findAll())
+        for (Genre genre : genresRepository.findAll())
             stringBuilder.append(genre.getId()).append("\t").append(genre.getName()).append("<br/>");
 
         stringBuilder.append("<br/>").append("<br/>");
 
-        for (Film film: filmsRepository.findAll())
+        for (Film film : filmsRepository.findAll())
             stringBuilder.append(film).append("<br/>");
         return stringBuilder.toString();
     }
+
+    @RequestMapping("/hello")
+    public Message greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new Message(name);
+    }
+
 }

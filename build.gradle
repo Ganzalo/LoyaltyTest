@@ -3,10 +3,19 @@ plugins {
     id 'maven-publish'
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id "org.liquibase.gradle" version "2.0.2"
+    id "com.moowork.node" version "1.3.1"
 }
 
 repositories {
     mavenCentral()
+}
+
+repositories.whenObjectAdded {
+    if (it instanceof IvyArtifactRepository) {
+        metadataSources {
+            artifact()
+        }
+    }
 }
 
 dependencies {
@@ -28,8 +37,61 @@ compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
 apply plugin: 'java'
+apply plugin: "com.moowork.node"
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+}
+
+node {
+    // Version of node to use.
+    version = '13.5.0'
+
+    // Base URL for fetching node distributions (change if you have a mirror).
+    distBaseUrl = 'https://nodejs.org/dist'
+
+    // If true, it will download node using above parameters.
+    // If false, it will try to use globally installed node.
+    download = true
+
+    // Set the work directory for unpacking node
+    workDir = file("${project.buildDir}/frontend/nodejs")
+
+    // Set the work directory for NPM
+    npmWorkDir = file("${project.buildDir}/frontend/npm")
+
+    // Set the work directory where node_modules should be located
+    nodeModulesDir = file("${project.projectDir}/frontend")
+}
+
+task npmInstallDependencies(type: NpmTask) {
+    dependsOn 'npmSetup'
+    execOverrides {
+        it.ignoreExitValue = true
+        it.workingDir = 'frontend'
+    }
+    args = ['install']
+}
+
+task npmBuild(type: NpmTask) {
+    dependsOn 'npmInstallDependencies'
+    execOverrides {
+        it.workingDir = 'frontend'
+    }
+    args = ['run', 'build']
+}
+
+task copyFrontendToBuild(type: Copy) {
+    dependsOn 'npmBuild'
+    from "$projectDir/frontend/build/"
+    into "$buildDir/resources/main/static"
+}
+
+task startFrontend(type: Copy) {
+    dependsOn 'npmStart'
+}
+
+processResources{
+    dependsOn 'copyFrontendToBuild'
 }
 
 tasks.withType(Test) {
