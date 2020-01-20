@@ -17,6 +17,7 @@ import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE
 
 /**
  * Получение информации о фильмах
+ * todo в spring не может быть класса со статик методами, поскольку они противоречат IoC/DI
  */
 
 class FilmsInfoHolder {

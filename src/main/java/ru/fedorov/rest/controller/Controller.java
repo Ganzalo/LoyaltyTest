@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
+//todo Bad practice to use only one controller for different types of endpoints: split it to three: each one for each repository
 @RestController
 public class Controller {
 
