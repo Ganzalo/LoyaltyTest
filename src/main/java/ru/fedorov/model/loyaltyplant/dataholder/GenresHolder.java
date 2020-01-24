@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.fedorov.model.loyaltyplant.vo.genres.Genre;
 import ru.fedorov.model.loyaltyplant.vo.genres.Genres;
-import ru.fedorov.util.Console;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +28,7 @@ class GenresHolder {
         try {
             genres = new ObjectMapper().readValue(new URL(REQUEST_GENRES), new TypeReference<Genres>() {});
         } catch (IOException e) {
-            Console.writeMessage("Ошибка получения списка жанров.");
+            //Console.writeMessage("Ошибка получения списка жанров.");
         }
 
         return genres == null ? new ArrayList<>(Collections.emptyList()) : new ArrayList<>(genres.getGenres());

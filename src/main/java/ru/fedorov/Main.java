@@ -5,10 +5,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import ru.fedorov.model.loyaltyplant.LPCalculatorImpl;
-import ru.fedorov.ui.UI;
 
 /**
  * В основе архитектупы проекта лежит упрощенный MVC (https://hsto.org/files/0bd/003/42d/0bd00342d45c4515bd7d09e200a3cf02.png)

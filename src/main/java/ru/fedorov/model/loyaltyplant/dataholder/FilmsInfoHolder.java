@@ -3,7 +3,6 @@ package ru.fedorov.model.loyaltyplant.dataholder;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ru.fedorov.util.Console;
 import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
 import ru.fedorov.model.loyaltyplant.vo.filmsinfo.Page;
 
@@ -29,7 +28,7 @@ class FilmsInfoHolder {
         try {
             node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + "1"), ObjectNode.class);
         } catch (IOException e) {
-            Console.writeMessage("Ошибка получения значения максимальной страницы");
+            //Console.writeMessage("Ошибка получения значения максимальной страницы");
         }
 
         if (node != null && node.has("total_pages"))
@@ -48,11 +47,11 @@ class FilmsInfoHolder {
             page = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage),
                     new TypeReference<Page>() {});
         } catch (IOException e) {
-            Console.writeMessage("Ошибка получения страницы ");
+           // Console.writeMessage("Ошибка получения страницы ");
         }
 
         if (page == null) {
-            Console.writeMessage("Пропуск страницы " + currentPage);
+            //Console.writeMessage("Пропуск страницы " + currentPage);
             return Collections.emptyList();
         }
 

@@ -5,6 +5,4 @@ import ru.fedorov.entity.AVGenre;
 
 public interface AverageVotesRepository extends CrudRepository<AVGenre, Integer> {
 
-    AVGenre findById(int id);
-
 }
