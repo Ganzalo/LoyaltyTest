@@ -16,4 +16,9 @@ public class AverageVoteController {
         return avService.getAverageVote(id);
     }
 
+//    @RequestMapping("/averageVotes")
+//    public String getAverageVotes(@PathVariable int id) {
+//        return avService.getAverageVote(id);
+//    }
+
 }

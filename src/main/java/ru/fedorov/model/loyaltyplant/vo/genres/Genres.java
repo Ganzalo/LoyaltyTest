@@ -9,6 +9,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Genres {
 
-    private List<Genre> genres;
+    private List<GenreInfo> genres;
 
 }

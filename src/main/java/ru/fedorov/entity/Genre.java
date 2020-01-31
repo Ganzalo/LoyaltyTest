@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Entity
+@Builder
 @Table(name = "genres")
 public class Genre {
 
@@ -17,4 +18,5 @@ public class Genre {
     private int id;
 
     private String name;
+
 }

@@ -1,6 +1,9 @@
 package ru.fedorov.entity;
 
+import com.vladmihalcea.hibernate.type.array.IntArrayType;
 import lombok.*;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.util.Arrays;
@@ -12,12 +15,17 @@ import java.util.Arrays;
 @EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "films")
+@TypeDef(name = "int-array",
+         typeClass = IntArrayType.class)
 public class Film {
 
     @Id
     private long id;
 
-    @Column(name = "genre_ids")
+    @Type( type = "int-array" )
+    @Column(name = "genre_ids",
+            columnDefinition = "integer[]"
+    )
     private int[] genreIds;
 
     @Column(name = "vote_count")
@@ -33,4 +41,5 @@ public class Film {
                 ", voteCount = " + voteCount +
                 ", averageVote = " + averageVote;
     }
+
 }

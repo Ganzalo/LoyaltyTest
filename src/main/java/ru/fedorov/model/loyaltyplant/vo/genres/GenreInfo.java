@@ -2,6 +2,7 @@ package ru.fedorov.model.loyaltyplant.vo.genres;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,8 +12,8 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-
-public class Genre {
+@Builder
+public class GenreInfo {
 
     private int id;
     private String name;
@@ -21,7 +22,7 @@ public class Genre {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Genre genre = (Genre) o;
+        GenreInfo genre = (GenreInfo) o;
         return getId() == genre.getId() &&
                 Objects.equals(getName(), genre.getName());
     }

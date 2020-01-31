@@ -6,22 +6,15 @@ import org.springframework.stereotype.Service;
 import ru.fedorov.entity.AVGenre;
 import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
-import ru.fedorov.entity.converter.FilmConverter;
-import ru.fedorov.model.loyaltyplant.Calculator;
-import ru.fedorov.model.loyaltyplant.dataholder.DataHolder;
-import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
+import ru.fedorov.model.loyaltyplant.calculator.Calculator;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
-import ru.fedorov.ui.fronttest.Message;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
@@ -42,9 +35,10 @@ public class AVServiceImpl implements AVService {
 
         AVGenre avGenre = averageVotesRepository.findById(id).orElse(null);
         if (avGenre == null) {
-            float averageVote = new Calculator(id)
-                    .calculateAverageVote(StreamSupport.stream(filmsRepository.findAll().spliterator(), false)
-                            .map(FilmConverter::convertToFilmInfo).collect(Collectors.toList()));
+            System.out.println("tut");
+            List<Film> films = filmsRepository.getFilmsByGenreIds(id);
+            float averageVote = new Calculator().calculateAverageVote(films);
+            System.out.println(films.size());
             Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
             avGenre = new AVGenre(id, averageVote, timestamp);
             averageVotesRepository.save(avGenre);

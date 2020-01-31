@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * В основе архитектупы проекта лежит упрощенный MVC (https://hsto.org/files/0bd/003/42d/0bd00342d45c4515bd7d09e200a3cf02.png)
@@ -52,6 +53,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
+@EnableSwagger2
 public class Main {
     public static void main(String[] args)  {
         SpringApplication.run(Main.class, args);
