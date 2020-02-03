@@ -7,7 +7,6 @@ import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
-import ru.fedorov.ui.fronttest.Message;
 
 @Service
 @RequiredArgsConstructor
@@ -34,7 +33,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     @Deprecated
-    public Message greeting(String name) {
-        return new Message(name);
+    public String greeting(String name) {
+        return name + ", thanks so much for clicking the button! You really do love me!";
     }
 }

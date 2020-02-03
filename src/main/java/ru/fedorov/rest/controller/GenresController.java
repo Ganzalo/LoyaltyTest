@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.fedorov.service.TestService;
-import ru.fedorov.ui.fronttest.Message;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,7 +18,7 @@ public class GenresController {
     }
 
     @RequestMapping("/hello")
-    public Message greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return testService.greeting(name);
     }
 }

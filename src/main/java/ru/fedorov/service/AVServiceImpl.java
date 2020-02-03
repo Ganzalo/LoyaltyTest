@@ -19,6 +19,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AVServiceImpl implements AVService {
+
     @Autowired
     private GenresRepository genresRepository;
 
@@ -35,10 +36,8 @@ public class AVServiceImpl implements AVService {
 
         AVGenre avGenre = averageVotesRepository.findById(id).orElse(null);
         if (avGenre == null) {
-            System.out.println("tut");
             List<Film> films = filmsRepository.getFilmsByGenreIds(id);
             float averageVote = new Calculator().calculateAverageVote(films);
-            System.out.println(films.size());
             Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
             avGenre = new AVGenre(id, averageVote, timestamp);
             averageVotesRepository.save(avGenre);
@@ -48,6 +47,15 @@ public class AVServiceImpl implements AVService {
         return String.format("Average vote %s = %.2f actual for current = ",
                 genreName, avGenre.getAverageVote()) + avGenre.getTimestamp().toLocalDateTime()
                 .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    }
+
+    @Override
+    public String getAverageVotes() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Genre genre  : genresRepository.findAll())
+            stringBuilder.append(getAverageVote(genre.getId())).append("<br/>");
+
+        return stringBuilder.toString();
     }
 
 }

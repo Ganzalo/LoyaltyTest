@@ -12,7 +12,7 @@ public class Calculator {
     public float calculateAverageVote(List<Film> films) {
         float sum = 0;
         int count = 0;
-        System.out.println("calculateAverageVote");
+
         for (Film averageVoteByFilm : films) {
             if (averageVoteByFilm.getVoteCount() != 0) {
                 sum += averageVoteByFilm.getAverageVote();
