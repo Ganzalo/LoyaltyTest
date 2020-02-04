@@ -3,6 +3,8 @@ package ru.fedorov.model.loyaltyplant.dataholder;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
 import ru.fedorov.model.loyaltyplant.vo.filmsinfo.Page;
 
@@ -15,6 +17,7 @@ import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE
 
 public class FilmsInfoHolder {
 
+    private Logger logger = LoggerFactory.getLogger("businessLogic");
     private int currentPage = 1;
     private int maxPage = requestMaxPage();
 
@@ -23,30 +26,34 @@ public class FilmsInfoHolder {
         try {
             node = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + "1"), ObjectNode.class);
         } catch (IOException e) {
-            //Console.writeMessage("Ошибка получения значения максимальной страницы");todo добавить лог
+            logger.warn("Ошибка получения кол-во страниц");
         }
 
-        if (node != null && node.has("total_pages"))
-            return 20;//TODO
-        //return node.get("total_pages").asInt();
+        if (node != null && node.has("total_pages")) {
+            logger.info("Кол-во страниц = " + node.get("total_pages").asInt());
+            return 20;//TODO 20 for test
+            //return node.get("total_pages").asInt();
+        }
 
+        logger.warn("Кол-во страниц = 0");
         return 0;
     }
 
-    private List<FilmInfo> requestPage(int currentPage) {
+    private List<FilmInfo> requestPage() {
         Page page = null;
         try {
-            page = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + currentPage),
+            page = new ObjectMapper().readValue(new URL(REQUEST_AVERAGE_VOTE + this.currentPage),
                     new TypeReference<Page>() {});
         } catch (IOException e) {
-            // Console.writeMessage("Ошибка получения страницы ");todo добавить лог
+            logger.warn("Ошибка получения страницы " + this.currentPage);
         }
 
         if (page == null) {
-            //Console.writeMessage("Пропуск страницы " + currentPage);todo добавить лог
+            logger.warn("Пропуск страницы " + this.currentPage);
             return Collections.emptyList();
         }
 
+        logger.info("Получения страницы " + this.currentPage);
         return new ArrayList<>(page.getResults());
     }
 
@@ -56,10 +63,11 @@ public class FilmsInfoHolder {
 
         List<FilmInfo> filmsInfo = new LinkedList<>();
         while (this.currentPage < maxPage) {
-            filmsInfo.addAll(requestPage(this.currentPage));
+            filmsInfo.addAll(requestPage());
             this.currentPage++;
         }
 
+        logger.info("Получены все страницы");
         return filmsInfo;
     }
 

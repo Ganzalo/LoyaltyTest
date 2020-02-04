@@ -1,5 +1,7 @@
 package ru.fedorov.model.loyaltyplant.dataholder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -18,6 +20,8 @@ import java.util.stream.Collectors;
 @EnableScheduling
 public class SchedulerDataHolder {
 
+    private Logger logger = LoggerFactory.getLogger("businessLogic");
+
     @Autowired
     private GenresRepository genresRepository;
 
@@ -27,6 +31,7 @@ public class SchedulerDataHolder {
     @Scheduled(fixedRate = 1000 * 60 * 60)//cron = "0 0 * * * *"
     public void schedulerStart() {
         DataHolder dataHolder = new DataHolderImpl();
+        logger.info("Шедулер начал работу");
 
         List<Genre> genres = dataHolder.getGenres().stream()
                 .map(GenreConverter::convertToGenre).collect(Collectors.toList());
@@ -35,6 +40,7 @@ public class SchedulerDataHolder {
 
         genresRepository.saveAll(genres);
         filmsRepository.saveAll(filmsInfo);
+        logger.info("Шедулер закончил работу");
     }
 
 }
