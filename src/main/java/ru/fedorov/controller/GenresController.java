@@ -1,4 +1,4 @@
-package ru.fedorov.rest.controller;
+package ru.fedorov.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
