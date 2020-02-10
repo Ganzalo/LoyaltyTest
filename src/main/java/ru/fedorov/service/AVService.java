@@ -1,8 +1,12 @@
 package ru.fedorov.service;
 
+import ru.fedorov.service.ui.AVGenreModel;
+
+import java.util.List;
+
 public interface AVService {
 
-    String getAverageVote(int id);
+    AVGenreModel getAverageVote(int id);
 
-    String getAverageVotes();
+    List<AVGenreModel> getAverageVotes();
 }

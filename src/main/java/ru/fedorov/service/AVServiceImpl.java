@@ -10,10 +10,11 @@ import ru.fedorov.model.loyaltyplant.calculator.Calculator;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
+import ru.fedorov.service.ui.AVGenreModel;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,32 +31,30 @@ public class AVServiceImpl implements AVService {
     private AverageVotesRepository averageVotesRepository;
 
     @Override
-    public String getAverageVote(int id) {
+    public AVGenreModel getAverageVote(int id) {
         if (!genresRepository.existsById(id))
-            return "No such genre this id";
+            return new AVGenreModel();
 
-        AVGenre avGenre = averageVotesRepository.findById(id).orElse(null);
-        if (avGenre == null) {
+        if (!averageVotesRepository.existsById(id)) {
             List<Film> films = filmsRepository.getFilmsByGenreIds(id);
             float averageVote = new Calculator().calculateAverageVote(films);
             Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
-            avGenre = new AVGenre(id, averageVote, timestamp);
-            averageVotesRepository.save(avGenre);
+            averageVotesRepository.save(new AVGenre(id, averageVote, timestamp));
         }
 
-        String genreName = genresRepository.findById(id).orElse(new Genre(id, "Неизвестный жанр")).getName();
-        return String.format("Average vote %s = %.2f actual for current = ",
-                genreName, avGenre.getAverageVote()) + avGenre.getTimestamp().toLocalDateTime()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        AVGenre avGenre = averageVotesRepository.findById(id).orElse(new AVGenre());
+        Genre genre = genresRepository.findById(id).orElse(new Genre());
+        return AVGenreModel.builder().id(avGenre.getId()).nameGenre(genre.getName())
+                .averageVote(avGenre.getAverageVote()).timestamp(avGenre.getTimestamp()).build();
     }
 
     @Override
-    public String getAverageVotes() {
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<AVGenreModel> getAverageVotes() {
+        List<AVGenreModel> avGenres = new ArrayList<>();
         for (Genre genre  : genresRepository.findAll())
-            stringBuilder.append(getAverageVote(genre.getId())).append("<br/>");
+            avGenres.add(getAverageVote(genre.getId()));
 
-        return stringBuilder.toString();
+        return avGenres;
     }
 
 }
