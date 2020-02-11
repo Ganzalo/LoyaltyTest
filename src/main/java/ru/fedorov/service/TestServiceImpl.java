@@ -7,7 +7,6 @@ import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
-import ru.fedorov.service.ui.Message;
 
 @Service
 @RequiredArgsConstructor
@@ -32,9 +31,4 @@ public class TestServiceImpl implements TestService {
         return stringBuilder.toString();
     }
 
-    @Override
-    @Deprecated
-    public Message greeting(String name) {
-        return new Message(name);
-    }
 }

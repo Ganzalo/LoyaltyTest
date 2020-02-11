@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import ru.fedorov.service.ui.AVGenreModel;
+import ru.fedorov.service.frontend.model.AVGenreModel;
 import ru.fedorov.service.AVService;
 
 import java.util.List;
@@ -27,6 +27,18 @@ public class AverageVoteController {
     public List<AVGenreModel> getAverageVotes() {
         logger.info("Получения средний оценки за жанры");
         return avService.getAverageVotes();
+    }
+
+    @RequestMapping("/calculate/{id}")
+    public void calculateAverageVote(@PathVariable int id) {
+        logger.info("Запрос на подсчет средний оценки за жанр id = " + id);
+        avService.calculateAverageVote(id);
+    }
+
+    @RequestMapping("/calculates")
+    public void calculateAverageVotes() {
+        logger.info("Подсчет средний оценки за жанры");
+        avService.calculateAverageVotes();
     }
 
 }

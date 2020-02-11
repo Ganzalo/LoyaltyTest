@@ -10,7 +10,7 @@ import ru.fedorov.model.loyaltyplant.calculator.Calculator;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
-import ru.fedorov.service.ui.AVGenreModel;
+import ru.fedorov.service.frontend.model.AVGenreModel;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -36,14 +36,12 @@ public class AVServiceImpl implements AVService {
             return new AVGenreModel();
 
         if (!averageVotesRepository.existsById(id)) {
-            List<Film> films = filmsRepository.getFilmsByGenreIds(id);
-            float averageVote = new Calculator().calculateAverageVote(films);
-            Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
-            averageVotesRepository.save(new AVGenre(id, averageVote, timestamp));
+            calculateAndSaveAV(id);
         }
 
         AVGenre avGenre = averageVotesRepository.findById(id).orElse(new AVGenre());
         Genre genre = genresRepository.findById(id).orElse(new Genre());
+
         return AVGenreModel.builder().id(avGenre.getId()).nameGenre(genre.getName())
                 .averageVote(avGenre.getAverageVote()).timestamp(avGenre.getTimestamp()).build();
     }
@@ -55,6 +53,23 @@ public class AVServiceImpl implements AVService {
             avGenres.add(getAverageVote(genre.getId()));
 
         return avGenres;
+    }
+
+    @Override
+    public void calculateAverageVote(int id) {
+        calculateAndSaveAV(id);
+    }
+
+    @Override
+    public void calculateAverageVotes() {
+        for (Genre genre  : genresRepository.findAll())
+            calculateAndSaveAV(genre.getId());
+    }
+
+    private void calculateAndSaveAV(int id) {
+        List<Film> films = filmsRepository.getFilmsByGenreIds(id);
+        float averageVote = new Calculator().calculateAverageVote(films);
+        averageVotesRepository.save(new AVGenre(id, averageVote, Timestamp.valueOf(LocalDateTime.now())));
     }
 
 }

@@ -1,4 +1,4 @@
-package ru.fedorov.service.ui;
+package ru.fedorov.service.frontend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

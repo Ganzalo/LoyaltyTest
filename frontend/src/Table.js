@@ -2,58 +2,84 @@ import React, { Component } from 'react'
 import './Table.css';
 
 class Table extends Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-         averageVotes: ''
-//                  averageVotes: [
-//                     { id: 1, nameGenre: 'Wasif', averageVote: 7.3, timestamp: '2020-02-10T07:53:42.538+0000' },
-//                     { id: 2, nameGenre: 'Ali', averageVote: 5.8, timestamp: '2020-02-10T07:53:42.538+0000' },
-//                     { id: 3, nameGenre: 'Saad', averageVote: 7.8, timestamp: '2020-02-10T07:53:42.538+0000' },
-//                     { id: 4, nameGenre: 'Asad', averageVote: 5.8, timestamp: '2020-02-10T07:53:42.538+0000' }
-//                  ]
-      }
-   }
+    constructor(props) {
+        super(props)
+        this.state = {
+            isLoading: true,
+            averageVotes: ''
+        }
+    }
 
-//  getAverageVotes() {
-//    let response = fetch('/averageVotes');
-//    let body = response.json();
-//    this.setState({ averageVotes: body});
-//  }
+    renderTableHeader() {
+        return <tr><th>id</th><th>genre</th><th>averageVote</th><th>date</th></tr>
+    }
 
- renderTableData() {
-      return this.state.averageVotes.map((averageVoteModel, index) => {
-         const { id, nameGenre, averageVote, timestamp } = averageVoteModel //destructuring
-         return (
-            <tr key={id}>
-               <td>{id}</td>
-               <td>{nameGenre}</td>
-               <td>{averageVote}</td>
-               <td>{timestamp}</td>
-            </tr>
-         )
-      })
-   }
+    renderTableData() {
+        return this.state.averageVotes.map((averageVoteModel, index) => {
+            const { id, nameGenre, averageVote, timestamp } = averageVoteModel
+            return (
+                <tr key={id}>
+                <td>{id}</td>
+                <td>{nameGenre}</td>
+                <td>{averageVote}</td>
+                <td>{this.parseDate(timestamp)}</td>
+                <td><button onClick={(event)=>this.recalculate(id, event)}>Пересчитать</button></td>
+                </tr>
+            )
+        })
+    }
 
-   renderTableHeader() {
-      let header = Object.keys(this.state.averageVotes[0])
-      return header.map((key, index) => {
-         return <th key={index}>{key.toUpperCase()}</th>
-      })
-   }
+     async recalculate(id, event) {
+        event.preventDefault();
+        this.setState({isLoading: true});
+        let response = await fetch('/calculate/' + id);
+        //this.setState({isLoading: false});
+        this.componentDidMount();
+     }
 
-render() {
-      return (
-         <div>
-            <h1 id='title'>Average Votes</h1>
-            <table id='averageVote'>
-               <tbody>
-                  <tr>{this.renderTableHeader()}</tr>
-                  {this.renderTableData()}
-               </tbody>
-            </table>
-         </div>
-      )
-   }
+     async recalculateAll(event) {
+        event.preventDefault();
+        this.setState({isLoading: true});
+        let response = await fetch('/calculates/');
+        //this.setState({isLoading: false});
+        this.componentDidMount();
+     }
+
+    parseDate(date) {
+        var options = {
+            year: '2-digit',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        };
+        return new Date(date).toLocaleString("ru", options);
+    }
+
+    async componentDidMount() {
+        let response = await fetch('/averageVotes');
+        let body = await response.json();
+        this.setState({averageVotes: body, isLoading: false})
+    }
+
+    render() {
+        if (this.state.isLoading) {
+            return <div>Loading...</div>;
+        }
+        return (
+            <div>
+                <h1 id='title'>Average Votes</h1>
+                <table id='averageVote'>
+                <tbody>
+                    {this.renderTableHeader()}
+                    {this.renderTableData()}
+                </tbody>
+                </table>
+                <button onClick={(event)=>this.recalculateAll(event)}>Пересчитать все</button>
+            </div>
+        )
+    }
 }
+
 export default Table;
