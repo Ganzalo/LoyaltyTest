@@ -11,7 +11,7 @@ class Table extends Component {
     }
 
     renderTableHeader() {
-        return <tr><th>id</th><th>genre</th><th>averageVote</th><th>date</th></tr>
+        return <tr><td>id</td><td>genre</td><td>average vote</td><td>date</td><td>recalculate</td></tr>
     }
 
     renderTableData() {
@@ -23,7 +23,7 @@ class Table extends Component {
                 <td>{nameGenre}</td>
                 <td>{averageVote}</td>
                 <td>{this.parseDate(timestamp)}</td>
-                <td><button onClick={(event)=>this.recalculate(id, event)}>Пересчитать</button></td>
+                <td><button onClick={(event)=>this.recalculate(id, event)}>Пересчитать</button> </td>
                 </tr>
             )
         })
@@ -33,7 +33,6 @@ class Table extends Component {
         event.preventDefault();
         this.setState({isLoading: true});
         let response = await fetch('/calculate/' + id);
-        //this.setState({isLoading: false});
         this.componentDidMount();
      }
 
@@ -41,7 +40,6 @@ class Table extends Component {
         event.preventDefault();
         this.setState({isLoading: true});
         let response = await fetch('/calculates/');
-        //this.setState({isLoading: false});
         this.componentDidMount();
      }
 
@@ -69,14 +67,12 @@ class Table extends Component {
         }
         return (
             <div>
-                <h1 id='title'>Average Votes</h1>
-                <table id='averageVote'>
-                <tbody>
+                <h1 class='title'>Average Votes</h1>
+                <table class='averageVote'>
                     {this.renderTableHeader()}
                     {this.renderTableData()}
-                </tbody>
                 </table>
-                <button onClick={(event)=>this.recalculateAll(event)}>Пересчитать все</button>
+                <button class="allCalculate" onClick={(event)=>this.recalculateAll(event)}>Пересчитать все</button>
             </div>
         )
     }
