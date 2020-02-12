@@ -19,6 +19,7 @@ public class TestServiceImpl implements TestService {
     private FilmsRepository filmsRepository;
 
     @Override
+    @Deprecated
     public String show() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Genre genre : genresRepository.findAll())

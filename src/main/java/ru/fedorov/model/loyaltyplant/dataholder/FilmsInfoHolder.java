@@ -31,8 +31,7 @@ public class FilmsInfoHolder {
 
         if (node != null && node.has("total_pages")) {
             logger.info("Кол-во страниц = " + node.get("total_pages").asInt());
-            return 20;//TODO 20 for test
-            //return node.get("total_pages").asInt();
+            return node.get("total_pages").asInt();//TODO set 20 for test
         }
 
         logger.warn("Кол-во страниц = 0");
