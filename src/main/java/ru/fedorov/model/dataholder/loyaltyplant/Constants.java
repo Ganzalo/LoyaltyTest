@@ -1,4 +1,4 @@
-package ru.fedorov.model.loyaltyplant.dataholder;
+package ru.fedorov.model.dataholder.loyaltyplant;
 
 /**
  * Константы описывают Endpoint к ресурсам

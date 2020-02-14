@@ -1,19 +1,19 @@
-package ru.fedorov.model.loyaltyplant.dataholder;
+package ru.fedorov.model.dataholder.loyaltyplant;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
-import ru.fedorov.model.loyaltyplant.vo.filmsinfo.Page;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.filmsinfo.FilmInfo;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.filmsinfo.Page;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 
-import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_AVERAGE_VOTE;
+import static ru.fedorov.model.dataholder.loyaltyplant.Constants.REQUEST_AVERAGE_VOTE;
 
 public class FilmsInfoHolder {
 

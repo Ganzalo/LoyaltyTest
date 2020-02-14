@@ -1,4 +1,4 @@
-package ru.fedorov.model.loyaltyplant.vo.filmsinfo;
+package ru.fedorov.model.dataholder.loyaltyplant.vo.filmsinfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

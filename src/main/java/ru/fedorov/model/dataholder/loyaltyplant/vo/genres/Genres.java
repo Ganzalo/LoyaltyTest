@@ -1,4 +1,4 @@
-package ru.fedorov.model.loyaltyplant.vo.genres;
+package ru.fedorov.model.dataholder.loyaltyplant.vo.genres;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

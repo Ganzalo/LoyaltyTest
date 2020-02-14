@@ -13,4 +13,7 @@ public interface AVService {
     void calculateAverageVote(int id);
 
     void calculateAverageVotes();
+
+    @Deprecated
+    String show();
 }

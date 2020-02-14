@@ -1,4 +1,4 @@
-package ru.fedorov.model.loyaltyplant.calculator;
+package ru.fedorov.model.calculator;
 
 import ru.fedorov.entity.Film;
 

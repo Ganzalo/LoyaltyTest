@@ -1,4 +1,4 @@
-package ru.fedorov.model.loyaltyplant.dataholder;
+package ru.fedorov.model.dataholder.loyaltyplant;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

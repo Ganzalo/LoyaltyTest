@@ -2,7 +2,7 @@ package ru.fedorov.entity.converter;
 
 import lombok.NonNull;
 import ru.fedorov.entity.Film;
-import ru.fedorov.model.loyaltyplant.vo.filmsinfo.FilmInfo;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.filmsinfo.FilmInfo;
 
 public class FilmConverter {
 

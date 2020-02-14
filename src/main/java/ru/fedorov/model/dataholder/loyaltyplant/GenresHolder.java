@@ -1,11 +1,11 @@
-package ru.fedorov.model.loyaltyplant.dataholder;
+package ru.fedorov.model.dataholder.loyaltyplant;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.fedorov.model.loyaltyplant.vo.genres.GenreInfo;
-import ru.fedorov.model.loyaltyplant.vo.genres.Genres;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.genres.GenreInfo;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.genres.Genres;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static ru.fedorov.model.loyaltyplant.dataholder.Constants.REQUEST_GENRES;
+import static ru.fedorov.model.dataholder.loyaltyplant.Constants.REQUEST_GENRES;
 
 class GenresHolder {
 

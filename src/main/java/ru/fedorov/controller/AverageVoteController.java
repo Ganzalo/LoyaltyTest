@@ -10,7 +10,6 @@ import ru.fedorov.service.AVService;
 import java.util.List;
 
 @RestController
-//@RequestMapping(path = "AV")
 @RequiredArgsConstructor
 public class AverageVoteController {
 
@@ -39,6 +38,12 @@ public class AverageVoteController {
     public void calculateAverageVotes() {
         logger.info("Подсчет средний оценки за жанры");
         avService.calculateAverageVotes();
+    }
+
+    @RequestMapping("/show")
+    public String show() {
+        logger.info("Отобразить все данные");
+        return avService.show();
     }
 
 }

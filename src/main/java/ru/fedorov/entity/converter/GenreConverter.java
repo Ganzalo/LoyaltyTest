@@ -2,7 +2,7 @@ package ru.fedorov.entity.converter;
 
 import lombok.NonNull;
 import ru.fedorov.entity.Genre;
-import ru.fedorov.model.loyaltyplant.vo.genres.GenreInfo;
+import ru.fedorov.model.dataholder.loyaltyplant.vo.genres.GenreInfo;
 
 public class GenreConverter {
 

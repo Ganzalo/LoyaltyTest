@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.fedorov.entity.AVGenre;
 import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
-import ru.fedorov.model.loyaltyplant.calculator.Calculator;
+import ru.fedorov.model.calculator.Calculator;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
@@ -70,6 +70,19 @@ public class AVServiceImpl implements AVService {
         List<Film> films = filmsRepository.getFilmsByGenreIds(id);
         float averageVote = new Calculator().calculateAverageVote(films);
         averageVotesRepository.save(new AVGenre(id, averageVote, Timestamp.valueOf(LocalDateTime.now())));
+    }
+
+    @Override
+    public String show() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Genre genre : genresRepository.findAll())
+            stringBuilder.append(genre.getId()).append("\t").append(genre.getName()).append("<br/>");
+
+        stringBuilder.append("<br/>").append("<br/>");
+
+        for (Film film : filmsRepository.findAll())
+            stringBuilder.append(film).append("<br/>");
+        return stringBuilder.toString();
     }
 
 }
