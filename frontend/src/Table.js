@@ -16,11 +16,11 @@ class Table extends Component {
 
     renderTableData() {
         return this.state.averageVotes.map((averageVoteModel, index) => {
-            const { id, nameGenre, averageVote, timestamp } = averageVoteModel
+            const { id, name, averageVote, timestamp } = averageVoteModel
             return (
                 <tr key={id}>
                 <td>{id}</td>
-                <td>{nameGenre}</td>
+                <td>{name}</td>
                 <td>{averageVote}</td>
                 <td>{this.parseDate(timestamp)}</td>
                 <td><button onClick={(event)=>this.recalculate(id, event)}>Пересчитать</button> </td>

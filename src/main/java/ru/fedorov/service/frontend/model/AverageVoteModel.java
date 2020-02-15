@@ -11,14 +11,16 @@ import java.sql.Timestamp;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AVGenreModel {
+public class AverageVoteModel {
 
     private int id;
 
-    private String nameGenre;
+    private String name;
 
     private float averageVote;
 
     private Timestamp timestamp;
+
+
 
 }

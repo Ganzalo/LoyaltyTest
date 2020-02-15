@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "AverageVotes")
-public class AVGenre {
+public class AverageVote {
 
     @Id
     private int id;

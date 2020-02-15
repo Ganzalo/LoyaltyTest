@@ -3,14 +3,14 @@ package ru.fedorov.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.fedorov.entity.AVGenre;
+import ru.fedorov.entity.AverageVote;
 import ru.fedorov.entity.Film;
 import ru.fedorov.entity.Genre;
 import ru.fedorov.model.calculator.Calculator;
 import ru.fedorov.repository.AverageVotesRepository;
 import ru.fedorov.repository.FilmsRepository;
 import ru.fedorov.repository.GenresRepository;
-import ru.fedorov.service.frontend.model.AVGenreModel;
+import ru.fedorov.service.frontend.model.AverageVoteModel;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -30,25 +30,27 @@ public class AVServiceImpl implements AVService {
     @Autowired
     private AverageVotesRepository averageVotesRepository;
 
+    private final Calculator calculator;
+
     @Override
-    public AVGenreModel getAverageVote(int id) {
+    public AverageVoteModel getAverageVote(int id) {
         if (!genresRepository.existsById(id))
-            return new AVGenreModel();
+            return new AverageVoteModel();
 
         if (!averageVotesRepository.existsById(id)) {
             calculateAndSaveAV(id);
         }
 
-        AVGenre avGenre = averageVotesRepository.findById(id).orElse(new AVGenre());
+        AverageVote averageVote = averageVotesRepository.findById(id).orElse(new AverageVote());
         Genre genre = genresRepository.findById(id).orElse(new Genre());
 
-        return AVGenreModel.builder().id(avGenre.getId()).nameGenre(genre.getName())
-                .averageVote(avGenre.getAverageVote()).timestamp(avGenre.getTimestamp()).build();
+        return AverageVoteModel.builder().id(averageVote.getId()).name(genre.getName())
+                .averageVote(averageVote.getAverageVote()).timestamp(averageVote.getTimestamp()).build();
     }
 
     @Override
-    public List<AVGenreModel> getAverageVotes() {
-        List<AVGenreModel> avGenres = new ArrayList<>();
+    public List<AverageVoteModel> getAverageVotes() {
+        List<AverageVoteModel> avGenres = new ArrayList<>();
         for (Genre genre  : genresRepository.findAll())
             avGenres.add(getAverageVote(genre.getId()));
 
@@ -66,13 +68,14 @@ public class AVServiceImpl implements AVService {
             calculateAndSaveAV(genre.getId());
     }
 
-    private void calculateAndSaveAV(int id) {
+    protected void calculateAndSaveAV(int id) {
         List<Film> films = filmsRepository.getFilmsByGenreIds(id);
-        float averageVote = new Calculator().calculateAverageVote(films);
-        averageVotesRepository.save(new AVGenre(id, averageVote, Timestamp.valueOf(LocalDateTime.now())));
+        float averageVote = calculator.calculateAverageVote(films);
+        averageVotesRepository.save(new AverageVote(id, averageVote, Timestamp.valueOf(LocalDateTime.now())));
     }
 
     @Override
+    @Deprecated
     public String show() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Genre genre : genresRepository.findAll())

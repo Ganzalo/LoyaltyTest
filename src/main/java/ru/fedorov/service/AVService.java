@@ -1,19 +1,18 @@
 package ru.fedorov.service;
 
-import ru.fedorov.service.frontend.model.AVGenreModel;
+import ru.fedorov.service.frontend.model.AverageVoteModel;
 
 import java.util.List;
 
 public interface AVService {
 
-    AVGenreModel getAverageVote(int id);
+    AverageVoteModel getAverageVote(int id);
 
-    List<AVGenreModel> getAverageVotes();
+    List<AverageVoteModel> getAverageVotes();
 
     void calculateAverageVote(int id);
 
     void calculateAverageVotes();
 
-    @Deprecated
     String show();
 }
