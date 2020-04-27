@@ -1,0 +1,38 @@
+.title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.averageVote {
+  text-align: center;
+  border: 3px solid #ddd;
+  border-collapse: collapse;
+}
+
+tr {
+   border: 1px solid #ddd;
+}
+td {
+ border: 1px solid #ddd;
+ padding: 0px 10px;
+ text-align: center;
+ font-weight: bold;
+   font-size: 24px;
+}
+.averageVote th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+button {
+  margin: 0 auto;
+      display: block;
+}
+
+.allCalculate {
+    margin-top: 10px;
+}
